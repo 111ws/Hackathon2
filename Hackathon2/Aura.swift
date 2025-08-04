@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct Hackathon2App: App {
+struct Aura: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           ContentView()
         }
     }
 }
