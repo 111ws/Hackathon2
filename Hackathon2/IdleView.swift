@@ -29,7 +29,7 @@ struct IdleView: View {
                 .font(.system(size: 80))
                 .foregroundColor(.white)
             
-            Text("Everything is okay...")
+            Text("i am always here")
                 .font(.title2)
                 .foregroundColor(.white)
             

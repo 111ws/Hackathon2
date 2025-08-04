@@ -31,14 +31,16 @@ enum AnimojiType: String, CaseIterable {
 }
 
 // 用户视频渲染管理器
+// 修改UserVideoRenderer类，将videoCapture改为internal访问级别
 class UserVideoRenderer: NSObject, ObservableObject {
     @Published var isAnimojiEnabled = true
     @Published var currentAnimoji: AnimojiType = .memoji
     @Published var faceTrackingActive = false
     @Published var blendShapes: [ARFaceAnchor.BlendShapeLocation: Float] = [:]
     
+    // 将videoCapture改为internal访问级别
+    var videoCapture: AVCaptureSession?
     private var arSession: ARSession?
-    private var videoCapture: AVCaptureSession?
     private var faceAnchor: ARFaceAnchor?
     private var animojiEntity: Entity?
     
@@ -151,7 +153,24 @@ class UserVideoRenderer: NSObject, ObservableObject {
             print("应用混合形状: \(blendShapeName) 权重: \(coefficient)")
         }
     }
-    
+    private func checkCameraPermission() {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            setupVideoCapture()
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+                if granted {
+                    DispatchQueue.main.async {
+                        self.setupVideoCapture()
+                    }
+                }
+            }
+        case .denied, .restricted:
+            print("摄像头权限被拒绝")
+        @unknown default:
+            break
+        }
+    }
     // 映射AR面部混合形状到模型混合形状名称
     private func blendShapeName(for location: ARFaceAnchor.BlendShapeLocation) -> String {
         switch location {
@@ -271,24 +290,17 @@ extension UserVideoRenderer: AVCaptureVideoDataOutputSampleBufferDelegate {
 struct UserVideoView: UIViewRepresentable {
     @ObservedObject var renderer: UserVideoRenderer
     
+    // 修改UserVideoView的makeUIView方法
     func makeUIView(context: Context) -> UIView {
         let containerView = UIView()
         containerView.backgroundColor = .black
         
-        // 添加ARSession预览视图
-        if let arSession = renderer.getARSession() {
-            let arView = ARSCNView(frame: .zero)
-            arView.session = arSession
-            arView.backgroundColor = .clear
-            
-            containerView.addSubview(arView)
-            arView.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                arView.topAnchor.constraint(equalTo: containerView.topAnchor),
-                arView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-                arView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-                arView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-            ])
+        // 添加视频预览层
+        if let captureSession = renderer.videoCapture {
+            let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            previewLayer.frame = containerView.bounds
+            containerView.layer.addSublayer(previewLayer)
         }
         
         return containerView
@@ -296,6 +308,9 @@ struct UserVideoView: UIViewRepresentable {
     
     func updateUIView(_ uiView: UIView, context: Context) {
         // 更新视图
+        if let previewLayer = uiView.layer.sublayers?.first as? AVCaptureVideoPreviewLayer {
+            previewLayer.frame = uiView.bounds
+        }
     }
 }
 

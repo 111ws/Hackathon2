@@ -1,4 +1,12 @@
 //
+//  CallKitManager.swift
+//  Hackathon2
+//
+//  Created by 陆氏干饭王 on 03-08-2025.
+//
+
+
+//
 //  contentViewHandle.swift
 //  Hackathon
 //
@@ -94,7 +102,7 @@ class CallKitManager: NSObject, CXProviderDelegate, PKPushRegistryDelegate {
         currentCallUUID = uuid
         
         let update = CXCallUpdate()
-        update.remoteHandle = CXHandle(type: .phoneNumber, value: contact)
+        update.remoteHandle = CXHandle(type: .emailAddress, value: contact)
         update.hasVideo = false
         update.localizedCallerName = contact
         
@@ -162,7 +170,7 @@ extension Notification.Name {
 class CallManager: ObservableObject {
     @Published var callState: CallState = .idle
     @Published var callDuration: TimeInterval = 0
-    @Published var contactName: String = "联系人"
+    @Published var contactName: String = "Aura"
     
     private var timer: Timer?
     private let callKitManager = CallKitManager.shared
@@ -192,7 +200,7 @@ class CallManager: ObservableObject {
     
     // 修改 startCall 方法，移除接听延迟
     func startCall() {
-        contactName = "AI Assistant"
+        contactName = "Aura"
         // 直接报告来电，不设置延迟
         callKitManager.reportIncomingCall(from: contactName)
     }

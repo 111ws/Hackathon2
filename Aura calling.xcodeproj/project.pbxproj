@@ -24,18 +24,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA9EE4192E3FBDC400045F4F /* Aura.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aura.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA9EE4272E3FBDC500045F4F /* AuraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA9EE4312E3FBDC500045F4F /* AuraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA9EE4192E3FBDC400045F4F /* Aura calling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aura calling.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA9EE4272E3FBDC500045F4F /* Aura callingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aura callingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA9EE4312E3FBDC500045F4F /* Aura callingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aura callingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		FA9EE4512E3FC2A300045F4F /* Exceptions for "Hackathon2" folder in "Aura" target */ = {
+		FA9EE4512E3FC2A300045F4F /* Exceptions for "Hackathon2" folder in "Aura calling" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = FA9EE4182E3FBDC400045F4F /* Aura */;
+			target = FA9EE4182E3FBDC400045F4F /* Aura calling */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -43,7 +43,7 @@
 		FA9EE41B2E3FBDC400045F4F /* Hackathon2 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				FA9EE4512E3FC2A300045F4F /* Exceptions for "Hackathon2" folder in "Aura" target */,
+				FA9EE4512E3FC2A300045F4F /* Exceptions for "Hackathon2" folder in "Aura calling" target */,
 			);
 			path = Hackathon2;
 			sourceTree = "<group>";
@@ -98,9 +98,9 @@
 		FA9EE41A2E3FBDC400045F4F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA9EE4192E3FBDC400045F4F /* Aura.app */,
-				FA9EE4272E3FBDC500045F4F /* AuraTests.xctest */,
-				FA9EE4312E3FBDC500045F4F /* AuraUITests.xctest */,
+				FA9EE4192E3FBDC400045F4F /* Aura calling.app */,
+				FA9EE4272E3FBDC500045F4F /* Aura callingTests.xctest */,
+				FA9EE4312E3FBDC500045F4F /* Aura callingUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,9 +108,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FA9EE4182E3FBDC400045F4F /* Aura */ = {
+		FA9EE4182E3FBDC400045F4F /* Aura calling */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA9EE43B2E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "Aura" */;
+			buildConfigurationList = FA9EE43B2E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "Aura calling" */;
 			buildPhases = (
 				FA9EE4152E3FBDC400045F4F /* Sources */,
 				FA9EE4162E3FBDC400045F4F /* Frameworks */,
@@ -123,16 +123,16 @@
 			fileSystemSynchronizedGroups = (
 				FA9EE41B2E3FBDC400045F4F /* Hackathon2 */,
 			);
-			name = Aura;
+			name = "Aura calling";
 			packageProductDependencies = (
 			);
 			productName = Hackathon2;
-			productReference = FA9EE4192E3FBDC400045F4F /* Aura.app */;
+			productReference = FA9EE4192E3FBDC400045F4F /* Aura calling.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FA9EE4262E3FBDC500045F4F /* AuraTests */ = {
+		FA9EE4262E3FBDC500045F4F /* Aura callingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA9EE43E2E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "AuraTests" */;
+			buildConfigurationList = FA9EE43E2E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "Aura callingTests" */;
 			buildPhases = (
 				FA9EE4232E3FBDC500045F4F /* Sources */,
 				FA9EE4242E3FBDC500045F4F /* Frameworks */,
@@ -146,16 +146,16 @@
 			fileSystemSynchronizedGroups = (
 				FA9EE42A2E3FBDC500045F4F /* Hackathon2Tests */,
 			);
-			name = AuraTests;
+			name = "Aura callingTests";
 			packageProductDependencies = (
 			);
 			productName = Hackathon2Tests;
-			productReference = FA9EE4272E3FBDC500045F4F /* AuraTests.xctest */;
+			productReference = FA9EE4272E3FBDC500045F4F /* Aura callingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FA9EE4302E3FBDC500045F4F /* AuraUITests */ = {
+		FA9EE4302E3FBDC500045F4F /* Aura callingUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA9EE4412E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "AuraUITests" */;
+			buildConfigurationList = FA9EE4412E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "Aura callingUITests" */;
 			buildPhases = (
 				FA9EE42D2E3FBDC500045F4F /* Sources */,
 				FA9EE42E2E3FBDC500045F4F /* Frameworks */,
@@ -169,11 +169,11 @@
 			fileSystemSynchronizedGroups = (
 				FA9EE4342E3FBDC500045F4F /* Hackathon2UITests */,
 			);
-			name = AuraUITests;
+			name = "Aura callingUITests";
 			packageProductDependencies = (
 			);
 			productName = Hackathon2UITests;
-			productReference = FA9EE4312E3FBDC500045F4F /* AuraUITests.xctest */;
+			productReference = FA9EE4312E3FBDC500045F4F /* Aura callingUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +199,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FA9EE4142E3FBDC300045F4F /* Build configuration list for PBXProject "Aura" */;
+			buildConfigurationList = FA9EE4142E3FBDC300045F4F /* Build configuration list for PBXProject "Aura calling" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -213,9 +213,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FA9EE4182E3FBDC400045F4F /* Aura */,
-				FA9EE4262E3FBDC500045F4F /* AuraTests */,
-				FA9EE4302E3FBDC500045F4F /* AuraUITests */,
+				FA9EE4182E3FBDC400045F4F /* Aura calling */,
+				FA9EE4262E3FBDC500045F4F /* Aura callingTests */,
+				FA9EE4302E3FBDC500045F4F /* Aura callingUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,12 +271,12 @@
 /* Begin PBXTargetDependency section */
 		FA9EE4292E3FBDC500045F4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FA9EE4182E3FBDC400045F4F /* Aura */;
+			target = FA9EE4182E3FBDC400045F4F /* Aura calling */;
 			targetProxy = FA9EE4282E3FBDC500045F4F /* PBXContainerItemProxy */;
 		};
 		FA9EE4332E3FBDC500045F4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FA9EE4182E3FBDC400045F4F /* Aura */;
+			target = FA9EE4182E3FBDC400045F4F /* Aura calling */;
 			targetProxy = FA9EE4322E3FBDC500045F4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -510,7 +510,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aura.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Aura";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aura calling.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Aura calling";
 				XROS_DEPLOYMENT_TARGET = 2.4;
 			};
 			name = Debug;
@@ -533,7 +533,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aura.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Aura";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Aura calling.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Aura calling";
 				XROS_DEPLOYMENT_TARGET = 2.4;
 			};
 			name = Release;
@@ -585,7 +585,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FA9EE4142E3FBDC300045F4F /* Build configuration list for PBXProject "Aura" */ = {
+		FA9EE4142E3FBDC300045F4F /* Build configuration list for PBXProject "Aura calling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9EE4392E3FBDC500045F4F /* Debug */,
@@ -594,7 +594,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA9EE43B2E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "Aura" */ = {
+		FA9EE43B2E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "Aura calling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9EE43C2E3FBDC500045F4F /* Debug */,
@@ -603,7 +603,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA9EE43E2E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "AuraTests" */ = {
+		FA9EE43E2E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "Aura callingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9EE43F2E3FBDC500045F4F /* Debug */,
@@ -612,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA9EE4412E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "AuraUITests" */ = {
+		FA9EE4412E3FBDC500045F4F /* Build configuration list for PBXNativeTarget "Aura callingUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA9EE4422E3FBDC500045F4F /* Debug */,
