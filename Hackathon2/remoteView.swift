@@ -31,8 +31,8 @@ struct remoteView: View {
             
             // 中间的涟漪波纹动画
             VStack {
-//                Spacer()
-//                    .frame(height: -UIScreen.main.bounds.height   )
+                Spacer()
+                    .frame(height: UIScreen.main.bounds.height * 0.35 )
                 AdvancedGradientRippleAnimation(
                     color: .white,
                     maxSize: 180,

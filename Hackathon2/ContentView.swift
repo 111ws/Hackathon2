@@ -45,13 +45,13 @@ struct ContentView: View {
                 if callManager.callState == .idle {
                     IdleView(callManager: callManager)
                 } else {
-                    CallView(callManager: callManager)
+                    StandaloneCallViewWrapper()
                 }
             }
         }
         .onAppear {
             // 应用启动后设置1分钟后的来电
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
                 callManager.startCall()
             }
         }
