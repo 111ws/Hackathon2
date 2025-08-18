@@ -20,13 +20,13 @@ enum CallState {
 
 struct ContentView: View {
     @StateObject private var callManager = CallManager()
-    @State private var selectedTab: Tab = .home
+    @State private var selectedTab: Tab = .calendar
     
     enum Tab: Hashable {
-        case home
-        case call
-        case camera
-        case health
+        case dashboard
+        case insights
+        case calendar
+        case profile
     }
     
     var body: some View {
@@ -34,52 +34,32 @@ struct ContentView: View {
             appBackground
             
             TabView(selection: $selectedTab) {
-                // Home
+                // Dashboard
                 IdleView(callManager: callManager)
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
-                    .tag(Tab.home)
-                
-                // Call
-                callTabContent()
-                    .tabItem {
-                        Label("Call", systemImage: "phone.fill")
-                    }
-                    .tag(Tab.call)
-                
-                // Camera preview
-                SimpleCameraView()
-                    .tabItem {
-                        Label("Camera", systemImage: "camera.fill")
-                    }
-                    .tag(Tab.camera)
-                
+                    .tabItem { Label("Dashboard", systemImage: "house.fill") }
+                    .tag(Tab.dashboard)
+
+                // Insights (Health)
+                HealthView()
+                    .tabItem { Label("Insights", systemImage: "heart.fill") }
+                    .tag(Tab.insights)
+
                 // Calendar
                 CalendarView()
-                    .tabItem {
-                        Label("Calendar", systemImage: "calendar")
-                    }
-                    .tag(Tab.health)
+                    .tabItem { Label("Calendar", systemImage: "calendar") }
+                    .tag(Tab.calendar)
+
+                // Profile
+                ProfileView()
+                    .tabItem { Label("Profile", systemImage: "person.crop.circle") }
+                    .tag(Tab.profile)
+            }
+            .toolbar(.hidden, for: .tabBar)
+            .overlay(alignment: .bottom) {
+                CustomTabBar(selected: $selectedTab)
             }
         }
-        .onAppear {
-            // Demo: auto-trigger an incoming call after a short delay
-            DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
-                callManager.startCall()
-            }
-        }
-        .onChange(of: callManager.callState) { newState in
-            // 当来电响铃或已连接时，自动切换到通话页；结束后返回首页
-            switch newState {
-            case .ringing, .connected:
-                selectedTab = .call
-            case .ended:
-                selectedTab = .home
-            case .idle:
-                break
-            }
-        }
+        .onAppear { }
     }
     
     // MARK: - Subviews
@@ -101,34 +81,86 @@ struct ContentView: View {
         .ignoresSafeArea()
     }
     
-    @ViewBuilder
-    private func callTabContent() -> some View {
-        if callManager.callState == .idle {
-            // 在未通话时展示一个进入通话的入口
-            VStack(spacing: 20) {
-                Image(systemName: "phone.fill")
-                    .font(.system(size: 64))
-                    .foregroundColor(.white)
-                Text("Ready to call")
-                    .foregroundColor(.white)
-                    .font(.title3)
-                Button {
-                    // 立即触发来电（用于本地演示）
-                    callManager.startCall()
-                } label: {
-                    Label("Start Call", systemImage: "phone.arrow.up.right")
-                        .font(.headline)
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 10)
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                }
+    
+}
+
+// MARK: - Custom Tab Bar (matches design)
+private struct CustomTabBar: View {
+    @Binding var selected: ContentView.Tab
+    
+    private let barHeight: CGFloat = 72
+    
+    var body: some View {
+        ZStack(alignment: .bottom) {
+            // Background bar
+            Rectangle()
+                .fill(Color(.sRGB, red: 0.25, green: 0.25, blue: 0.25, opacity: 1))
+                .frame(height: barHeight)
+                .ignoresSafeArea(edges: .bottom)
+            
+            // Five equidistant items (center blue pill is a non-navigation button)
+            HStack(alignment: .bottom, spacing: 0) {
+                tabButton(.dashboard, title: "Dashboard", systemImage: "house.fill")
+                tabButton(.insights, title: "Insights", systemImage: "heart.fill")
+                centerPillButton()
+                tabButton(.calendar, title: "Calendar", systemImage: "calendar")
+                tabButton(.profile, title: "Profile", systemImage: "person.crop.circle")
             }
-            .padding()
-        } else {
-            StandaloneCallViewWrapper()
+            .padding(.horizontal, 12)
+            .padding(.bottom, 0)
+            .frame(height: barHeight)
         }
+    }
+    
+    private func tabButton(_ tab: ContentView.Tab, title: String, systemImage: String) -> some View {
+        let isSelected = selected == tab
+        return VStack(spacing: 6) {
+            ZStack {
+                Circle()
+                    .fill(isSelected ? Color.white : Color.gray.opacity(0.35))
+                    .frame(width: 36, height: 36)
+                Image(systemName: systemImage)
+                    .foregroundColor(isSelected ? Color.black : Color.white.opacity(0.9))
+            }
+            Text(title)
+                .font(.caption2)
+                .foregroundColor(isSelected ? Color.white : Color.gray.opacity(0.8))
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .contentShape(Rectangle())
+        .onTapGesture { withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) { selected = tab } }
+    }
+
+    // Center blue pill button (does not navigate)
+    private func centerPillButton() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 26)
+                .fill(Color(red: 0.35, green: 0.75, blue: 0.95))
+                .frame(width: 66, height: 76)
+                .offset(y: -18)
+                .shadow(color: Color.black.opacity(0.35), radius: 8, x: 0, y: 3)
+            // Optional icon can be added here if desired
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            // No navigation for now
+        }
+    }
+}
+
+// Temporary placeholder for Profile tab
+struct ProfilePlaceholderView: View {
+    var body: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "person.crop.circle")
+                .foregroundStyle(.white)
+                .font(.system(size: 64))
+            Text("Profile coming soon")
+                .foregroundStyle(.white)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.clear)
     }
 }
 

@@ -57,7 +57,7 @@ private extension CalendarView {
     
     func monthGrid() -> some View {
         let days = buildMonthDays(anchor: currentMonthAnchor)
-        return LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 0), count: 7), spacing: 14) {
+        return LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 0), count: 7), spacing: 11) {
             ForEach(days) { day in
                 dayCell(day)
                     .onTapGesture { select(day.date) }
@@ -72,7 +72,7 @@ private extension CalendarView {
             if item.isWithinCurrentMonth {
                 Circle()
                     .fill(backgroundColor(for: item))
-                    .frame(width: 32, height: 32)
+                    .frame(width: 26, height: 26)
                     .overlay(
                         Circle()
                             .stroke(isSelected ? Color.white : Color.clear, lineWidth: 2)
@@ -83,7 +83,7 @@ private extension CalendarView {
                 .fontWeight(item.isToday ? .bold : .regular)
                 .foregroundColor(textColor(for: item))
         }
-        .frame(height: 36)
+        .frame(height: 29)
         .opacity(item.isWithinCurrentMonth ? 1 : 0)
         .animation(.easeInOut(duration: 0.15), value: selectedDate)
     }
@@ -108,7 +108,7 @@ private extension CalendarView {
                 }
                 .padding(.bottom, 4)
             }
-            .frame(maxHeight: 480)
+            .frame(maxHeight: 576)
         }
         .sheet(item: $presentedConversation, onDismiss: { presentedConversation = nil }) { conv in
             ConversationDetailView(conversation: conv)
@@ -253,16 +253,11 @@ private struct ConversationCard: View {
     }
     
     private func conversationBody() -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            ForEach(entry.lines.indices, id: \.self) { idx in
-                Text(entry.lines[idx])
-                    .font(.caption)
-                    .foregroundColor(.white.opacity(0.9))
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-        }
-        .frame(maxHeight: 60, alignment: .top)
-        .clipped(antialiased: true)
+        Text(entry.lines.joined(separator: "\n"))
+            .font(.caption)
+            .foregroundColor(.white.opacity(0.9))
+            .lineLimit(3)
+            .multilineTextAlignment(.leading)
     }
     
     private func tagRow() -> some View {
