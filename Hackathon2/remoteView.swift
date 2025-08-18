@@ -10,29 +10,22 @@ import SwiftUI
 struct remoteView: View {
     var body: some View {
         ZStack {
-            // 背景颜色 - 来自ContentView.swift L28-39
-            ZStack {
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color(red: 0.98, green: 0.75, blue: 0.65),
-                        Color(red: 0.99, green: 0.85, blue: 0.55)
-                    ]),
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                
-                Rectangle()
-                    .fill(.ultraThinMaterial)
-                    .opacity(0.4)
-                
-                Color.black.opacity(0.1)
-            }
+            // 简化的背景渐变
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 1.0, green: 0.72, blue: 0.50),    // FFB780
+                    Color(red: 0.87, green: 0.71, blue: 0.62),   // D6B69D
+                    Color(red: 1.0, green: 0.76, blue: 0.58)     // FFC395
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
             .ignoresSafeArea()
             
             // 中间的涟漪波纹动画
             VStack {
                 Spacer()
-                    .frame(height: UIScreen.main.bounds.height * 0.35 )
+                    .frame(height: UIScreen.main.bounds.height * 0.15)
                 AdvancedGradientRippleAnimation(
                     color: .white,
                     maxSize: 180,

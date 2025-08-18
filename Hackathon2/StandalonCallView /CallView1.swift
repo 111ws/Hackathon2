@@ -65,8 +65,9 @@ struct StandaloneCallContent: View {
             } else {
                 LinearGradient(
                     gradient: Gradient(colors: [
-                        Color(red: 0.98, green: 0.75, blue: 0.65),
-                        Color(red: 0.99, green: 0.85, blue: 0.55)
+                        Color(red: 1.0, green: 0.72, blue: 0.50),
+                        Color(red: 0.84, green: 0.71, blue: 0.62),
+                        Color(red: 1.0, green: 0.76, blue: 0.58)
                     ]),
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
@@ -74,7 +75,7 @@ struct StandaloneCallContent: View {
                 .ignoresSafeArea()
             }
             
-            VStack(spacing: 40) {
+            VStack(spacing: 20) {
                 Spacer()
                 
                 if !viewModel.isVideoEnabled {
@@ -89,7 +90,7 @@ struct StandaloneCallContent: View {
                                 edgeColor: .clear
                             )
                             .frame(width: 300, height: 300)
-                            .animation(.easeInOut(duration: 0.3), value: viewModel.isSpeaking)
+                            .animation(.easeInOut(duration: 0.5), value: viewModel.isSpeaking)
                         )
                 }
                 
@@ -98,6 +99,16 @@ struct StandaloneCallContent: View {
                     .fontWeight(.medium)
                     .foregroundColor(.white)
                     .shadow(color: .black.opacity(0.5), radius: 2)
+                    .padding(.top, viewModel.isVideoEnabled ? 300 : 0)
+                    .animation(.easeInOut(duration: 0.3), value: viewModel.isVideoEnabled)
+                Text(viewModel.timeString(from: viewModel.callDuration))
+                    .font(.title2)
+                    .fontWeight(.regular)
+                    .foregroundColor(.white.opacity(0.9))
+                    .shadow(color: .black.opacity(0.3), radius: 1)
+                    .padding(.top, 8)
+                    .animation(.easeInOut(duration: 0.3), value: viewModel.isVideoEnabled)
+
                 if viewModel.isPlayingResponse {
                     HStack {
                         Image(systemName: "speaker.wave.2.fill")
@@ -111,7 +122,7 @@ struct StandaloneCallContent: View {
                 Spacer()
                 
                 // 通话控制按钮
-                HStack(spacing: 40) {
+                HStack(spacing: 25) {
                     // 视频开关按钮
                     Button(action: {
                         viewModel.isVideoEnabled.toggle()
@@ -124,6 +135,21 @@ struct StandaloneCallContent: View {
                                     .font(.system(size: 24))
                                     .foregroundColor(.white)
                             )
+                    }
+                    if viewModel.isVideoEnabled {
+                        Button(action: {
+                            viewModel.isFrontCamera.toggle()
+                        }) {
+                            Circle()
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(width: 65, height: 65)
+                                .overlay(
+                                    Image(systemName: "camera.rotate.fill")
+                                        .font(.system(size: 24))
+                                        .foregroundColor(.white)
+                                )
+                        }
+                        .transition(.scale.combined(with: .opacity))
                     }
                     
                     Button(action: {
@@ -144,7 +170,7 @@ struct StandaloneCallContent: View {
                     }) {
                         Circle()
                             .fill(Color.red)
-                            .frame(width: 70, height: 70)
+                            .frame(width: 65, height: 65)
                             .overlay(
                                 Image(systemName: "phone.down.fill")
                                     .font(.system(size: 30))
@@ -153,6 +179,7 @@ struct StandaloneCallContent: View {
                     }
                 }
                 .padding(.bottom, 50)
+                .animation(.easeInOut(duration: 0.3), value: viewModel.isVideoEnabled)
             }
             .padding()
             // 本地视频预览窗口
