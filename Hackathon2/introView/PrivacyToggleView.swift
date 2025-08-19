@@ -14,7 +14,7 @@ struct PrivacyToggleView: View {
                 Spacer()
                 Toggle("", isOn: $shareConversation)
                     .labelsHidden()
-                    .accentColor(WarmTheme.accent)
+                    .tint(WarmTheme.accent)
             }
             .padding(.horizontal)
             .padding(.bottom, 24)
@@ -37,7 +37,7 @@ struct PrivacyToggleView: View {
             }) {
                 Text("Continue")
                     .font(.headline)
-                    .foregroundColor(WarmTheme.cream)
+                    .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(WarmTheme.accent)
@@ -49,14 +49,7 @@ struct PrivacyToggleView: View {
             .navigationDestination(isPresented: $navigateToContentView) { ContentView() }
             .navigationBarBackButtonHidden(true)
         }
-        .background(
-            LinearGradient(
-                gradient: Gradient(colors: [WarmTheme.primaryBackground, WarmTheme.secondaryBackground]),
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .edgesIgnoringSafeArea(.all)
-        )
+        .background(Color.white)
     }
 }
 

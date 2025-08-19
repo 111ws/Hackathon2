@@ -26,37 +26,20 @@ struct HealthView: View {
     
     var body: some View {
         ZStack {
-            // 背景渐变 - 与其他页面保持一致
-            ZStack {
-                LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color(red: 0.98, green: 0.75, blue: 0.65),
-                        Color(red: 0.99, green: 0.85, blue: 0.55)
-                    ]),
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                
-                Rectangle()
-                    .fill(.ultraThinMaterial)
-                    .opacity(0.4)
-            }
-            .ignoresSafeArea()
+            Color.white.ignoresSafeArea()
             
             ScrollView {
                 VStack(spacing: 30) {
                     // 标题
                     VStack(spacing: 10) {
                         Image(systemName: "heart.fill")
-                            .font(.system(size: 50))
-                            .foregroundColor(.white)
-                            .shadow(color: .black.opacity(0.3), radius: 5)
+                            .font(.system(size: 44))
+                            .foregroundColor(WarmTheme.accent)
                         
                         Text("Health Data")
-                            .font(.largeTitle)
+                            .font(.title)
                             .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .shadow(color: .black.opacity(0.5), radius: 2)
+                            .foregroundColor(WarmTheme.primaryText)
                     }
                     .padding(.top, 40)
                     
@@ -72,7 +55,7 @@ struct HealthView: View {
                             title: "Heart Rate",
                             value: "\(healthData.heartRate)",
                             unit: "BPM",
-                            color: .red
+                            color: WarmTheme.accent
                         )
                         
                         // 心率变异性
@@ -81,7 +64,7 @@ struct HealthView: View {
                             title: "HRV",
                             value: String(format: "%.1f", healthData.heartRateVariability),
                             unit: "ms",
-                            color: .blue
+                            color: WarmTheme.accent
                         )
                         
                         // 压力水平
@@ -90,7 +73,7 @@ struct HealthView: View {
                             title: "Stress Level",
                             value: String(format: "%.1f", healthData.stressLevel * 100),
                             unit: "%",
-                            color: .orange
+                            color: WarmTheme.accent
                         )
                         
                         // 活动水平
@@ -99,7 +82,7 @@ struct HealthView: View {
                             title: "Activity Level",
                             value: healthData.activityLevel.capitalized,
                             unit: "",
-                            color: .green
+                            color: WarmTheme.accent
                         )
                         
                         // 睡眠质量
@@ -108,7 +91,7 @@ struct HealthView: View {
                             title: "Sleep Quality",
                             value: String(format: "%.0f", healthData.sleepQuality * 100),
                             unit: "%",
-                            color: .purple
+                            color: WarmTheme.accent
                         )
                     }
                     .padding(.horizontal, 20)

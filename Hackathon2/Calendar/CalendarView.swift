@@ -10,7 +10,7 @@ struct CalendarView: View {
     
     var body: some View {
         ZStack {
-            WarmTheme.primaryBackground.ignoresSafeArea()
+            Color.white.ignoresSafeArea()
             VStack(spacing: 16) {
                 header()
                 weekdayHeader()

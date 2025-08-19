@@ -31,7 +31,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            appBackground
+            Color.white.ignoresSafeArea()
             TabView(selection: $selectedTab) {
                 // Dashboard
                 IdleView(callManager: callManager)
@@ -64,23 +64,7 @@ struct ContentView: View {
     }
     
     // MARK: - Subviews
-    private var appBackground: some View {
-        ZStack {
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color(red: 0.8, green: 0.75, blue: 0.65),
-                    Color(red: 0.9, green: 0.5, blue: 0.5)
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            
-            Rectangle()
-                .fill(.ultraThinMaterial)
-                .opacity(0.4)
-        }
-        .ignoresSafeArea()
-    }
+    private var appBackground: some View { Color.white }
     private func ButtonPlaceholder() -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 26)

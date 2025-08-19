@@ -92,14 +92,7 @@ struct VoiceSelectionView: View {
                 .padding(.bottom, 16)
                 .navigationDestination(isPresented: $navigateToPrivacy) { PrivacyToggleView() }
             }
-            .background(
-                LinearGradient(
-                    gradient: Gradient(colors: [WarmTheme.primaryBackground, WarmTheme.secondaryBackground]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .edgesIgnoringSafeArea(.all)
-            )
+            .background(Color.white)
         }
     }
 }
