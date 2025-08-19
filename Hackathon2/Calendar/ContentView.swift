@@ -32,7 +32,6 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             appBackground
-            
             TabView(selection: $selectedTab) {
                 // Dashboard
                 IdleView(callManager: callManager)
@@ -43,7 +42,7 @@ struct ContentView: View {
                 HealthView()
                     .tabItem { Label("Insights", systemImage: "heart.fill") }
                     .tag(Tab.insights)
-
+                ButtonPlaceholder()
                 // Calendar
                 CalendarView()
                     .tabItem { Label("Calendar", systemImage: "calendar") }
@@ -59,6 +58,8 @@ struct ContentView: View {
                 CustomTabBar(selected: $selectedTab)
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .ignoresSafeArea(edges: .bottom)
         .onAppear { }
     }
     
@@ -67,8 +68,8 @@ struct ContentView: View {
         ZStack {
             LinearGradient(
                 gradient: Gradient(colors: [
-                    Color(red: 0.98, green: 0.75, blue: 0.65),
-                    Color(red: 0.99, green: 0.85, blue: 0.55)
+                    Color(red: 0.8, green: 0.75, blue: 0.65),
+                    Color(red: 0.9, green: 0.5, blue: 0.5)
                 ]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -80,15 +81,24 @@ struct ContentView: View {
         }
         .ignoresSafeArea()
     }
-    
-    
+    private func ButtonPlaceholder() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 26)
+                .frame(width: 66, height: 76)
+                .offset(y: -50)
+                .shadow(color: Color.black.opacity(0.35), radius: 8, x: 0, y: 3)
+            // Optional icon can be added here if desired
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .contentShape(Rectangle())
+    }
 }
 
 // MARK: - Custom Tab Bar (matches design)
 private struct CustomTabBar: View {
     @Binding var selected: ContentView.Tab
     
-    private let barHeight: CGFloat = 72
+    private let barHeight: CGFloat = 0
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -100,21 +110,22 @@ private struct CustomTabBar: View {
             
             // Five equidistant items (center blue pill is a non-navigation button)
             HStack(alignment: .bottom, spacing: 0) {
-                tabButton(.dashboard, title: "Dashboard", systemImage: "house.fill")
-                tabButton(.insights, title: "Insights", systemImage: "heart.fill")
+               // tabButton(.dashboard, title: "Dashboard", systemImage: "house.fill")
+               // tabButton(.insights, title: "Insights", systemImage: "heart.fill")
                 centerPillButton()
-                tabButton(.calendar, title: "Calendar", systemImage: "calendar")
-                tabButton(.profile, title: "Profile", systemImage: "person.crop.circle")
+               // tabButton(.calendar, title: "Calendar", systemImage: "calendar")
+                //tabButton(.profile, title: "Profile", systemImage: "person.crop.circle")
             }
             .padding(.horizontal, 12)
-            .padding(.bottom, 0)
+            .padding(.bottom, 27)
             .frame(height: barHeight)
         }
+        
     }
     
-    private func tabButton(_ tab: ContentView.Tab, title: String, systemImage: String) -> some View {
+   func tabButton(_ tab: ContentView.Tab, title: String, systemImage: String) -> some View {
         let isSelected = selected == tab
-        return VStack(spacing: 6) {
+        return VStack(spacing: 2) {
             ZStack {
                 Circle()
                     .fill(isSelected ? Color.white : Color.gray.opacity(0.35))
@@ -137,7 +148,7 @@ private struct CustomTabBar: View {
             RoundedRectangle(cornerRadius: 26)
                 .fill(Color(red: 0.35, green: 0.75, blue: 0.95))
                 .frame(width: 66, height: 76)
-                .offset(y: -18)
+                .offset(y: -50)
                 .shadow(color: Color.black.opacity(0.35), radius: 8, x: 0, y: 3)
             // Optional icon can be added here if desired
         }
