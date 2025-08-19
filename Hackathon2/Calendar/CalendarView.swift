@@ -10,12 +10,12 @@ struct CalendarView: View {
     
     var body: some View {
         ZStack {
-            Color.black.opacity(0.9).ignoresSafeArea()
+            WarmTheme.primaryBackground.ignoresSafeArea()
             VStack(spacing: 16) {
                 header()
                 weekdayHeader()
                 monthGrid()
-                Divider().background(Color.gray.opacity(0.3))
+                Divider().background(WarmTheme.border)
                 conversationList(for: selectedDate)
                 Spacer(minLength: 8)
             }
@@ -31,16 +31,22 @@ private extension CalendarView {
     func header() -> some View {
         HStack {
             Button(action: { stepMonth(by: -1) }) {
-                Image(systemName: "chevron.left").foregroundColor(.white)
+                Image(systemName: "chevron.left")
+                    .foregroundColor(WarmTheme.accent)
+                    .font(.title2)
             }
             Spacer()
             Text(currentMonthAnchor.formatted(.dateTime.year().month()))
-                .font(.title2).bold().foregroundColor(.white)
+                .font(.title2).bold()
+                .foregroundColor(WarmTheme.primaryText)
             Spacer()
             Button(action: { stepMonth(by: 1) }) {
-                Image(systemName: "chevron.right").foregroundColor(.white)
+                Image(systemName: "chevron.right")
+                    .foregroundColor(WarmTheme.accent)
+                    .font(.title2)
             }
         }
+        .padding(.horizontal, 8)
     }
     
     func weekdayHeader() -> some View {
@@ -48,7 +54,7 @@ private extension CalendarView {
             ForEach(weekSymbols, id: \.self) { s in
                 Text(s)
                     .font(.footnote).bold()
-                    .foregroundColor(.white.opacity(0.7))
+                    .foregroundColor(WarmTheme.secondaryText)
                     .frame(maxWidth: .infinity)
             }
         }
@@ -72,10 +78,10 @@ private extension CalendarView {
             if item.isWithinCurrentMonth {
                 Circle()
                     .fill(backgroundColor(for: item))
-                    .frame(width: 26, height: 26)
+                    .frame(width: 32, height: 32)
                     .overlay(
                         Circle()
-                            .stroke(isSelected ? Color.white : Color.clear, lineWidth: 2)
+                            .stroke(isSelected ? WarmTheme.accent : Color.clear, lineWidth: 2)
                     )
             }
             Text("\(calendar.component(.day, from: item.date))")
@@ -83,7 +89,7 @@ private extension CalendarView {
                 .fontWeight(item.isToday ? .bold : .regular)
                 .foregroundColor(textColor(for: item))
         }
-        .frame(height: 29)
+        .frame(height: 36)
         .opacity(item.isWithinCurrentMonth ? 1 : 0)
         .animation(.easeInOut(duration: 0.15), value: selectedDate)
     }
@@ -93,7 +99,7 @@ private extension CalendarView {
         VStack(alignment: .leading, spacing: 12) {
             Text(date.formatted(.dateTime.year().month().day()))
                 .font(.headline)
-                .foregroundColor(.white)
+                .foregroundColor(WarmTheme.primaryText)
                 .frame(maxWidth: .infinity, alignment: .leading)
             ScrollView {
                 VStack(spacing: 12) {
@@ -150,19 +156,16 @@ private extension CalendarView {
     
     func backgroundColor(for item: DayItem) -> Color {
         guard item.isWithinCurrentMonth else { return .clear }
-        // Only color dates from Aug 11 to Aug 18 (inclusive). Others are neutral.
         let comps = calendar.dateComponents([.year, .month, .day], from: item.date)
         if comps.year == 2025, comps.month == 8, let d = comps.day, d >= 11 && d <= 18 {
-            // Past vs future neutralization
             let today = Date()
             if calendar.compare(item.date, to: today, toGranularity: .day) == .orderedDescending {
-                return Color.white.opacity(0.08)
+                return WarmTheme.secondaryBackground
             }
-            // Deterministic pseudo-random based on yyyymmdd
             let seed = item.date.yyyyMMdd.hashValue
-            return (seed % 4 == 0 || seed % 4 == 1) ? Color(red: 0.16, green: 0.5, blue: 0.3) : Color(red: 0.45, green: 0.1, blue: 0.1)
+            return (seed % 4 == 0 || seed % 4 == 1) ? WarmTheme.lightCoral.opacity(0.6) : WarmTheme.coral.opacity(0.4)
         } else {
-            return Color.white.opacity(0.08)
+            return WarmTheme.secondaryBackground
         }
     }
     
@@ -170,9 +173,9 @@ private extension CalendarView {
         guard item.isWithinCurrentMonth else { return .clear }
         let today = Date()
         if calendar.compare(item.date, to: today, toGranularity: .day) == .orderedDescending {
-            return .gray
+            return WarmTheme.secondaryText
         }
-        return .white
+        return WarmTheme.primaryText
     }
     
     func info(_ message: String) {
@@ -229,46 +232,59 @@ private struct ConversationCard: View {
             timestampColumn()
             VStack(alignment: .leading, spacing: 8) {
                 Text(entry.title)
-                    .font(.subheadline).bold().foregroundColor(.white)
+                    .font(.subheadline).bold()
+                    .foregroundColor(WarmTheme.primaryText)
                 conversationBody()
                 tagRow()
             }
             Spacer(minLength: 0)
         }
         .padding(12)
-        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white.opacity(0.06)))
-        .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.white.opacity(0.08), lineWidth: 1))
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(WarmTheme.cardBackground)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(WarmTheme.border, lineWidth: 1)
+        )
         .contentShape(Rectangle())
     }
     
     private func timestampColumn() -> some View {
         VStack {
             Text(entry.times.first ?? "")
-                .font(.caption).foregroundColor(.white.opacity(0.8))
+                .font(.caption)
+                .foregroundColor(WarmTheme.accent)
             Spacer(minLength: 18)
             Text(entry.times.dropFirst().first ?? "")
-                .font(.caption).foregroundColor(.white.opacity(0.6))
+                .font(.caption)
+                .foregroundColor(WarmTheme.secondaryText)
         }
-        .frame(width: 44)
     }
     
     private func conversationBody() -> some View {
-        Text(entry.lines.joined(separator: "\n"))
-            .font(.caption)
-            .foregroundColor(.white.opacity(0.9))
-            .lineLimit(3)
-            .multilineTextAlignment(.leading)
+        VStack(alignment: .leading, spacing: 4) {
+            ForEach(entry.lines.prefix(3), id: \.self) { line in
+                Text(line)
+                    .font(.caption)
+                    .foregroundColor(WarmTheme.secondaryText)
+                    .lineLimit(1)
+            }
+        }
     }
     
     private func tagRow() -> some View {
-        HStack(spacing: 8) {
-            ForEach(entry.tags, id: \.self) { tag in
+        HStack(spacing: 6) {
+            ForEach(entry.tags.prefix(3), id: \.self) { tag in
                 Text(tag)
                     .font(.caption2)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(Capsule().fill(Color.white.opacity(0.12)))
+                    .foregroundColor(WarmTheme.accent)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(
+                        Capsule().fill(WarmTheme.lightAccent.opacity(0.3))
+                    )
             }
         }
     }

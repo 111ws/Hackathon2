@@ -57,12 +57,7 @@ class CallKitManager: NSObject, CXProviderDelegate, PKPushRegistryDelegate {
     
     // MARK: - CXProviderDelegate
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
-        // 用户接听电话
-        guard let callUUID = currentCallUUID else {
-            action.fail()
-            return
-        }
-        
+    
         // 立即配置音频会话
         configureAudioSession()
         action.fulfill()

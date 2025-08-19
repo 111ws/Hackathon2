@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 // MARK: - Data Models
 struct Conversation: Identifiable, Codable {
@@ -374,6 +375,27 @@ extension ConversationStore {
   }
 ]
 """
+}
+
+// MARK: - Color Theme
+struct WarmTheme {
+    // 主要珊瑚色调
+    static let coral = Color(red: 1.0, green: 0.5, blue: 0.31) // #FF7F50
+    static let lightCoral = Color(red: 1.0, green: 0.63, blue: 0.48) // #FFA07A
+    static let peach = Color(red: 0.9, green: 0.85, blue: 0.73) // #FFDAB9
+    static let cream = Color(red: 1.0, green: 0.97, blue: 0.93) // #FFF8ED
+
+    static let primaryBackground = cream
+    static let secondaryBackground = peach.opacity(0.3)
+    static let cardBackground = Color.white.opacity(0.8)
+    
+    static let primaryText = Color(red: 0.2, green: 0.2, blue: 0.2) // 深灰色
+    static let secondaryText = Color(red: 0.4, green: 0.4, blue: 0.4) // 中灰色
+    static let accentText = coral
+    
+    static let accent = coral
+    static let lightAccent = lightCoral.opacity(0.6)
+    static let border = coral.opacity(0.2)
 }
 
 

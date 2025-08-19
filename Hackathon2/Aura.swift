@@ -11,7 +11,7 @@ import SwiftUI
 struct Aura: App {
     var body: some Scene {
         WindowGroup {
-           ContentView()
+            VoiceSelectionView()
         }
     }
 }

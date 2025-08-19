@@ -9,15 +9,17 @@ struct ConversationDetailView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text(conversation.title)
                         .font(.title3).bold()
-                        .foregroundColor(.white)
+                        .foregroundColor(WarmTheme.primaryText)
                     HStack(spacing: 8) {
                         ForEach(conversation.tags.prefix(6), id: \.self) { tag in
                             Text(tag)
                                 .font(.caption2)
-                                .foregroundColor(.white)
+                                .foregroundColor(WarmTheme.accent)
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 4)
-                                .background(Capsule().fill(Color.white.opacity(0.12)))
+                                .background(
+                                    Capsule().fill(WarmTheme.lightAccent.opacity(0.3))
+                                )
                         }
                     }
                     .padding(.bottom, 4)
@@ -25,25 +27,25 @@ struct ConversationDetailView: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(DateFormatter.HHmm.string(from: msg.timestamp))
                                 .font(.caption2)
-                                .foregroundColor(.white.opacity(0.6))
+                                .foregroundColor(WarmTheme.secondaryText)
                             Text((msg.role.lowercased() == "user" ? "Me: " : "Aura: ") + msg.content)
                                 .font(.body)
-                                .foregroundColor(.white)
+                                .foregroundColor(WarmTheme.primaryText)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.vertical, 6)
-                        Divider().background(Color.white.opacity(0.08))
+                        Divider().background(WarmTheme.border)
                     }
                 }
                 .padding(16)
             }
-            .background(Color.black.opacity(0.95).ignoresSafeArea())
+            .background(WarmTheme.primaryBackground.ignoresSafeArea())
             .navigationTitle(conversation.startTime.formatted(.dateTime.year().month().day()))
             .navigationBarTitleDisplayMode(.inline)
         }
         .presentationDetents([.large])
-        .presentationBackground(.thinMaterial)
+        .presentationBackground(WarmTheme.cardBackground)
     }
 }
 
@@ -58,5 +60,3 @@ struct ConversationDetailView: View {
     )
     return ConversationDetailView(conversation: sample)
 }
-
-
