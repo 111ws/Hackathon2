@@ -1,4 +1,12 @@
 //
+//  CallState.swift
+//  Aura calling
+//
+//  Created by Macbook pro on 2025/8/19.
+//
+
+
+//
 //  ContentView.swift
 //  Hackathon
 //
@@ -10,15 +18,8 @@ import AVFoundation
 import CallKit
 import PushKit
 
-// 通话状态枚举
-enum CallState {
-    case idle
-    case ringing
-    case connected
-    case ended
-}
 
-struct ContentView: View {
+struct CallStateView: View {
     @StateObject private var callManager = CallManager()
     
     var body: some View {
@@ -59,5 +60,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    CallStateView()
 }

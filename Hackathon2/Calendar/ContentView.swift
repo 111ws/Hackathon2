@@ -25,42 +25,46 @@ struct ContentView: View {
     enum Tab: Hashable {
         case dashboard
         case insights
+        case callview
         case calendar
         case profile
     }
     
     var body: some View {
-        ZStack {
-            appBackground
-            TabView(selection: $selectedTab) {
-                // Dashboard
-                IdleView(callManager: callManager)
-                    .tabItem { Label("Dashboard", systemImage: "house.fill") }
-                    .tag(Tab.dashboard)
+        NavigationView {
+            ZStack {
+                appBackground
+                TabView(selection: $selectedTab) {
+                    // Dashboard
+                    IdleView(callManager: callManager)
+                        .tabItem { Label("Dashboard", systemImage: "house.fill") }
+                        .tag(Tab.dashboard)
 
-                // Insights (Health)
-                HealthView()
-                    .tabItem { Label("Insights", systemImage: "heart.fill") }
-                    .tag(Tab.insights)
-                ButtonPlaceholder()
-                // Calendar
-                CalendarView()
-                    .tabItem { Label("Calendar", systemImage: "calendar") }
-                    .tag(Tab.calendar)
+                    // Insights (Health)
+                    HealthView()
+                        .tabItem { Label("Insights", systemImage: "heart.fill") }
+                        .tag(Tab.insights)
+                    StandaloneCallViewWrapper()
+                       .tag(Tab.callview)
+                    // Calendar
+                    CalendarView()
+                        .tabItem { Label("Calendar", systemImage: "calendar") }
+                        .tag(Tab.calendar)
 
-                // Profile
-                ProfileView()
-                    .tabItem { Label("Profile", systemImage: "person.crop.circle") }
-                    .tag(Tab.profile)
+                    // Profile
+                    ProfileView()
+                        .tabItem { Label("Profile", systemImage: "person.crop.circle") }
+                        .tag(Tab.profile)
+                }
+                .toolbar(.hidden, for: .tabBar)
+                .overlay(alignment: .bottom) {
+                    CustomTabBar(selected: $selectedTab)
+                }
             }
-            .toolbar(.hidden, for: .tabBar)
-            .overlay(alignment: .bottom) {
-                CustomTabBar(selected: $selectedTab)
-            }
+            .navigationBarBackButtonHidden(true)
+            .ignoresSafeArea(edges: .bottom)
+            .onAppear { }
         }
-        .navigationBarBackButtonHidden(true)
-        .ignoresSafeArea(edges: .bottom)
-        .onAppear { }
     }
     
     // MARK: - Subviews
@@ -80,17 +84,6 @@ struct ContentView: View {
                 .opacity(0.4)
         }
         .ignoresSafeArea()
-    }
-    private func ButtonPlaceholder() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 26)
-                .frame(width: 66, height: 76)
-                .offset(y: -50)
-                .shadow(color: Color.black.opacity(0.35), radius: 8, x: 0, y: 3)
-            // Optional icon can be added here if desired
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-        .contentShape(Rectangle())
     }
 }
 
@@ -141,7 +134,7 @@ private struct CustomTabBar: View {
         .contentShape(Rectangle())
         .onTapGesture { withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) { selected = tab } }
     }
-
+   
     // Center blue pill button (does not navigate)
     private func centerPillButton() -> some View {
         ZStack {
@@ -154,11 +147,9 @@ private struct CustomTabBar: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
         .contentShape(Rectangle())
-        .onTapGesture {
-            // No navigation for now
-        }
     }
-}
+    }
+
 
 // Temporary placeholder for Profile tab
 struct ProfilePlaceholderView: View {
