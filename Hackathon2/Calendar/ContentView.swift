@@ -56,6 +56,7 @@ struct ContentView: View {
             .toolbar(.hidden, for: .tabBar)
             .overlay(alignment: .bottom) {
                 CustomTabBar(selected: $selectedTab)
+                    .ignoresSafeArea(edges: .bottom)
             }
         }
         .navigationBarBackButtonHidden(true)
