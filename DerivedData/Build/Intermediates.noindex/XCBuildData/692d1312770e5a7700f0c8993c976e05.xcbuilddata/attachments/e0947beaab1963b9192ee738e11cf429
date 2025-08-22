@@ -1,0 +1,288 @@
+{
+  "" : {
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura calling-master.dia",
+    "emit-module-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura calling-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura calling-master-emit-module.dia",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura calling-master.swiftdeps"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/Aura.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Aura~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/Calendar/CalendarView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CalendarView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CalendarView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CalendarView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CalendarView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CalendarView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CalendarView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CalendarView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CalendarView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/Calendar/ContentView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/Calendar/ConversationDetailView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ConversationDetailView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ConversationDetailView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ConversationDetailView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ConversationDetailView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ConversationDetailView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ConversationDetailView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ConversationDetailView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ConversationDetailView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/Calendar/Conversations.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Conversations.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Conversations.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Conversations.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Conversations.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Conversations.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Conversations.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Conversations.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Conversations~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/Calendar/ProfileView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ProfileView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ProfileView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ProfileView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ProfileView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ProfileView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ProfileView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ProfileView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/ProfileView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/Calendar/View.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/View.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/View.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/View.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/View.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/View.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/View.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/View.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/View~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/CameraView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CameraView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CameraView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CameraView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CameraView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CameraView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CameraView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CameraView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CameraView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/HealthView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/HealthView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/HealthView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/HealthView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/HealthView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/HealthView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/HealthView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/HealthView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/HealthView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/IdleView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/IdleView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/IdleView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/IdleView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/IdleView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/IdleView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/IdleView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/IdleView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/IdleView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/StandalonCallView /CallState.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallState.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallState.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallState.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallState.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallState.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallState.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallState.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallState~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/StandalonCallView /CallView1.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView1.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView1.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView1.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView1.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView1.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView1.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView1.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView1~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/StandalonCallView /Untitled.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Untitled.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Untitled.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Untitled.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Untitled.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Untitled.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Untitled.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Untitled.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/Untitled~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/StandalonCallView /extension CallView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/extension CallView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/extension CallView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/extension CallView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/extension CallView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/extension CallView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/extension CallView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/extension CallView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/extension CallView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/draw/AnimojiType.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/AnimojiType.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/AnimojiType.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/AnimojiType.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/AnimojiType.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/AnimojiType.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/AnimojiType.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/AnimojiType.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/AnimojiType~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/draw/CallKitManager.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallKitManager.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallKitManager.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallKitManager.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallKitManager.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallKitManager.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallKitManager.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallKitManager.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallKitManager~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/draw/CallView+BackendCommunication.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView+BackendCommunication.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView+BackendCommunication.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView+BackendCommunication.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView+BackendCommunication.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView+BackendCommunication.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView+BackendCommunication.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView+BackendCommunication.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView+BackendCommunication~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/draw/CallView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/CallView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/draw/RippleAnimationView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/RippleAnimationView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/RippleAnimationView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/RippleAnimationView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/RippleAnimationView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/RippleAnimationView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/RippleAnimationView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/RippleAnimationView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/RippleAnimationView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/draw/StandaloneCallViewModel.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/StandaloneCallViewModel.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/StandaloneCallViewModel.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/StandaloneCallViewModel.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/StandaloneCallViewModel.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/StandaloneCallViewModel.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/StandaloneCallViewModel.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/StandaloneCallViewModel.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/StandaloneCallViewModel~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/introView/3view.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/3view.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/3view.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/3view.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/3view.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/3view.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/3view.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/3view.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/3view~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/introView/MicrophoneAllowPopup.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/MicrophoneAllowPopup.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/MicrophoneAllowPopup.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/MicrophoneAllowPopup.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/MicrophoneAllowPopup.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/MicrophoneAllowPopup.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/MicrophoneAllowPopup.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/MicrophoneAllowPopup.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/MicrophoneAllowPopup~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/introView/PrivacyToggleView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/PrivacyToggleView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/PrivacyToggleView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/PrivacyToggleView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/PrivacyToggleView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/PrivacyToggleView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/PrivacyToggleView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/PrivacyToggleView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/PrivacyToggleView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/introView/VoiceSelectionView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/VoiceSelectionView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/VoiceSelectionView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/VoiceSelectionView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/VoiceSelectionView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/VoiceSelectionView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/VoiceSelectionView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/VoiceSelectionView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/VoiceSelectionView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/introView/nameView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/nameView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/nameView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/nameView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/nameView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/nameView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/nameView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/nameView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/nameView~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/introView/welcome.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/welcome.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/welcome.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/welcome.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/welcome.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/welcome.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/welcome.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/welcome.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/welcome~partial.swiftmodule"
+  },
+  "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/remoteView.swift" : {
+    "const-values" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/remoteView.swiftconstvalues",
+    "dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/remoteView.d",
+    "diagnostics" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/remoteView.dia",
+    "index-unit-output-path" : "/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/remoteView.o",
+    "llvm-bc" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/remoteView.bc",
+    "object" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/remoteView.o",
+    "swift-dependencies" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/remoteView.swiftdeps",
+    "swiftmodule" : "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/DerivedData/Build/Intermediates.noindex/Aura calling.build/Debug-iphonesimulator/Aura calling.build/Objects-normal/arm64/remoteView~partial.swiftmodule"
+  }
+}

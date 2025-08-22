@@ -10,6 +10,9 @@ import AVFoundation
 import CallKit
 import PushKit
 
+// 导入自定义视图
+
+
 // 通话状态枚举
 enum CallState {
     case idle
@@ -25,57 +28,66 @@ struct ContentView: View {
     enum Tab: Hashable {
         case dashboard
         case insights
+        case callview
         case calendar
         case profile
     }
     
     var body: some View {
-        ZStack {
-            Color.white.ignoresSafeArea()
-            TabView(selection: $selectedTab) {
-                // Dashboard
-                IdleView(callManager: callManager)
-                    .tabItem { Label("Dashboard", systemImage: "house.fill") }
-                    .tag(Tab.dashboard)
+        NavigationView {
+            ZStack {
+                appBackground
+                TabView(selection: $selectedTab) {
+                    // Dashboard
+                    HomeAndMentalView()
+                        .tabItem { Label("Dashboard", systemImage: "house.fill") }
+                        .tag(Tab.dashboard)
 
-                // Insights (Health)
-                HealthView()
-                    .tabItem { Label("Insights", systemImage: "heart.fill") }
-                    .tag(Tab.insights)
-                ButtonPlaceholder()
-                // Calendar
-                CalendarView()
-                    .tabItem { Label("Calendar", systemImage: "calendar") }
-                    .tag(Tab.calendar)
+                    // Insights (Health)
+                    HealthView()
+                        .tabItem { Label("Insights", systemImage: "heart.fill") }
+                        .tag(Tab.insights)
+                    StandaloneCallViewWrapper()
+                       .tag(Tab.callview)
+                    // Calendar
+                    CalendarView()
+                        .tabItem { Label("Calendar", systemImage: "calendar") }
+                        .tag(Tab.calendar)
 
-                // Profile
-                ProfileView()
-                    .tabItem { Label("Profile", systemImage: "person.crop.circle") }
-                    .tag(Tab.profile)
+                    // Profile
+                    ProfileView()
+                        .tabItem { Label("Profile", systemImage: "person.crop.circle") }
+                        .tag(Tab.profile)
+                }
+                .toolbar(.hidden, for: .tabBar)
+                .overlay(alignment: .bottom) {
+                    CustomTabBar(selected: $selectedTab)
+                }
             }
-            .toolbar(.hidden, for: .tabBar)
-            .overlay(alignment: .bottom) {
-                CustomTabBar(selected: $selectedTab)
-                    .ignoresSafeArea(edges: .bottom)
-            }
+            .ignoresSafeArea(edges: .bottom)
+            .onAppear { }
         }
         .navigationBarBackButtonHidden(true)
-        .ignoresSafeArea(edges: .bottom)
-        .onAppear { }
+        .navigationBarHidden(true)
     }
     
     // MARK: - Subviews
-    private var appBackground: some View { Color.white }
-    private func ButtonPlaceholder() -> some View {
+    private var appBackground: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 26)
-                .frame(width: 66, height: 76)
-                .offset(y: -50)
-                .shadow(color: Color.black.opacity(0.35), radius: 8, x: 0, y: 3)
-            // Optional icon can be added here if desired
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(red: 0.8, green: 0.75, blue: 0.65),
+                    Color(red: 0.9, green: 0.5, blue: 0.5)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            
+            Rectangle()
+                .fill(.ultraThinMaterial)
+                .opacity(0.4)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-        .contentShape(Rectangle())
+        .ignoresSafeArea()
     }
 }
 
@@ -126,7 +138,7 @@ private struct CustomTabBar: View {
         .contentShape(Rectangle())
         .onTapGesture { withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) { selected = tab } }
     }
-
+   
     // Center blue pill button (does not navigate)
     private func centerPillButton() -> some View {
         ZStack {
@@ -139,11 +151,9 @@ private struct CustomTabBar: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
         .contentShape(Rectangle())
-        .onTapGesture {
-            // No navigation for now
-        }
     }
-}
+    }
+
 
 // Temporary placeholder for Profile tab
 struct ProfilePlaceholderView: View {

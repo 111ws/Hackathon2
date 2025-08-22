@@ -1,0 +1,16 @@
+{
+  "source": "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/HealthView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Health Data",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 55
+        }
+      }
+    ]
+  },
+  "version": 1
+}

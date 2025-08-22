@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>11</integer>
+	<key>logs</key>
+	<dict>
+		<key>5EC32351-DA96-4A2C-A41B-D7D68F909884</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>5EC32351-DA96-4A2C-A41B-D7D68F909884.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Aura calling project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Aura calling</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Cleaning project Aura calling with scheme Aura calling</string>
+			<key>timeStartedRecording</key>
+			<real>777567642.82226098</real>
+			<key>timeStoppedRecording</key>
+			<real>777567643.29696703</real>
+			<key>title</key>
+			<string>Cleaning project Aura calling with scheme Aura calling</string>
+			<key>uniqueIdentifier</key>
+			<string>5EC32351-DA96-4A2C-A41B-D7D68F909884</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

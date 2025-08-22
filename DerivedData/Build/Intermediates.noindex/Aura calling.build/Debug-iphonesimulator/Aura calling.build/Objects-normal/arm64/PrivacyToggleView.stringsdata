@@ -1,0 +1,96 @@
+{
+  "source": "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/introView/PrivacyToggleView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Health Access",
+        "location": {
+          "startingColumn": 16,
+          "startingLine": 99
+        }
+      },
+      {
+        "comment": "",
+        "key": "Our commitment to you",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "Your mental health is personal and private.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 23
+        }
+      },
+      {
+        "comment": "",
+        "key": "Help us improve your experience by sharing your conversations",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 33
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 39
+        }
+      },
+      {
+        "comment": "",
+        "key": "By using this app, you agree to our ",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "Privacy Policy",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "Continue",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 79
+        }
+      },
+      {
+        "comment": "",
+        "key": "Don't Allow",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 100
+        }
+      },
+      {
+        "comment": "",
+        "key": "Allow",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 103
+        }
+      },
+      {
+        "comment": "",
+        "key": "\"Aura\" would like to access and update your Health data.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 109
+        }
+      }
+    ]
+  },
+  "version": 1
+}
