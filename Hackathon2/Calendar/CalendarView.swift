@@ -138,7 +138,7 @@ private extension CalendarView {
                         .position(x: width / 2, y: 110)
                     
                     // Cards in two columns
-                    VStack(spacing: 16) {
+                    HStack(alignment: .top) {
                         // Left row
                         HStack(spacing: gap) {
                             timelineCardLeft(
@@ -152,7 +152,6 @@ private extension CalendarView {
                         }
                         // Right row
                         HStack(spacing: gap) {
-                            Spacer()
                             timelineCardRight(
                                 title: "Felt Bad, but it's all\nOK.",
                                 subtitle: "xxxxxxx",
@@ -160,7 +159,6 @@ private extension CalendarView {
                             )
                             .frame(width: columnWidth)
                         }
-                        Spacer(minLength: 10)
                     }
                 }
             }
@@ -221,7 +219,6 @@ func timelineCardLeft(title: String, subtitle: String, iconColor: Color, metric:
                 }
                 Spacer()
             }
-            Spacer(minLength: 0)
             VStack(alignment: .leading, spacing: 8) {
                 Text(title)
                     .font(.headline)
@@ -232,6 +229,8 @@ func timelineCardLeft(title: String, subtitle: String, iconColor: Color, metric:
                     .foregroundColor(.gray)
                     .fixedSize(horizontal: false, vertical: true)
             }
+            Spacer()
+                .frame(height: 55)
         }
         .padding(16)
         .background(
