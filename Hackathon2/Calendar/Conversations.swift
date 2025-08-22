@@ -379,23 +379,26 @@ extension ConversationStore {
 
 // MARK: - Color Theme
 struct WarmTheme {
-    // 主要珊瑚色调
-    static let coral = Color(red: 1.0, green: 0.5, blue: 0.31) // #FF7F50
-    static let lightCoral = Color(red: 1.0, green: 0.63, blue: 0.48) // #FFA07A
-    static let peach = Color(red: 0.9, green: 0.85, blue: 0.73) // #FFDAB9
-    static let cream = Color(red: 1.0, green: 0.97, blue: 0.93) // #FFF8ED
+    // Base palette per style guide
+    static let purple = Color(red: 0.45, green: 0.20, blue: 0.85) // Accent
+    static let cream = Color.white // keep name for existing usages
+    
+    static let primaryBackground = Color.white
+    static let secondaryBackground = Color(white: 0.95)
+    static let cardBackground = Color.white
+    
+    static let primaryText = Color.black
+    static let secondaryText = Color.gray
+    static let accentText = Color.black
+    
+    static let accent = purple
+    static let lightAccent = purple.opacity(0.15)
+    static let border = Color.gray.opacity(0.15)
 
-    static let primaryBackground = cream
-    static let secondaryBackground = peach.opacity(0.3)
-    static let cardBackground = Color.white.opacity(0.8)
-    
-    static let primaryText = Color(red: 0.2, green: 0.2, blue: 0.2) // 深灰色
-    static let secondaryText = Color(red: 0.4, green: 0.4, blue: 0.4) // 中灰色
-    static let accentText = coral
-    
-    static let accent = coral
-    static let lightAccent = lightCoral.opacity(0.6)
-    static let border = coral.opacity(0.2)
+    // Legacy colors kept for calendar heatmap, etc.
+    static let coral = Color(red: 1.0, green: 0.5, blue: 0.31)
+    static let lightCoral = Color(red: 1.0, green: 0.63, blue: 0.48)
+    static let peach = Color(red: 0.9, green: 0.85, blue: 0.73)
 }
 
 

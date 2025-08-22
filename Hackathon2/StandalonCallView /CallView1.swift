@@ -77,20 +77,20 @@ struct StandaloneCallContent: View {
             
             VStack(spacing: 20) {
                 Spacer()
-                
+    
                 if !viewModel.isVideoEnabled {
                     Circle()
                         .fill(Color.clear)
                         .frame(width: 150, height: 150)
                         .overlay(
                             AdvancedGradientRippleAnimation(
-                                color: viewModel.isSpeaking ? .green : .white,
-                                maxSize: viewModel.isSpeaking ? 200 : 180,
-                                centerColor: viewModel.isSpeaking ? Color.green : Color.white,
+                                color: Color.white,
+                                maxSize: 180,
+                                centerColor: Color.white,
                                 edgeColor: .clear
                             )
                             .frame(width: 300, height: 300)
-                            .animation(.easeInOut(duration: 0.5), value: viewModel.isSpeaking)
+                            
                         )
                 }
                 

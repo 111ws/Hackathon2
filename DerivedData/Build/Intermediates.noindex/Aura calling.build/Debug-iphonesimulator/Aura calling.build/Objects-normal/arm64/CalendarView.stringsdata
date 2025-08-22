@@ -1,0 +1,32 @@
+{
+  "source": "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/Calendar/CalendarView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "My Calendar",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 67
+        }
+      },
+      {
+        "comment": "",
+        "key": " ",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 147
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 152
+        }
+      }
+    ]
+  },
+  "version": 1
+}

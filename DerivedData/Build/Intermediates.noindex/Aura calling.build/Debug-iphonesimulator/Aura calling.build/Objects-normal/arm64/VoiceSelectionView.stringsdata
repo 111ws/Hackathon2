@@ -1,0 +1,48 @@
+{
+  "source": "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/introView/VoiceSelectionView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Microphone Access",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 110
+        }
+      },
+      {
+        "comment": "",
+        "key": "Confirm",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 82
+        }
+      },
+      {
+        "comment": "",
+        "key": "Don't Allow",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 111
+        }
+      },
+      {
+        "comment": "",
+        "key": "Allow",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 116
+        }
+      },
+      {
+        "comment": "",
+        "key": "\"Aura\" would like to access the microphone.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 123
+        }
+      }
+    ]
+  },
+  "version": 1
+}
