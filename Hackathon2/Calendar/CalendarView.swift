@@ -50,8 +50,9 @@ private extension CalendarView {
         let days = buildWeekDays(anchor: baseDate)
         return GeometryReader { geo in
             let spacing: CGFloat = 12
-            let pillWidth = max(46, floor((geo.size.width - spacing * 6) / 7))
-            let pillHeight = pillWidth * 1.18
+            // exact-fit width so 7 items + 6 spacings equal total width
+            let pillWidth = (geo.size.width - spacing * 6) / 7
+            let pillHeight = max(64, pillWidth * 1.18)
             HStack(spacing: spacing) {
                 ForEach(days) { item in
                     dayPill(item, size: CGSize(width: pillWidth, height: pillHeight))
@@ -69,6 +70,9 @@ private extension CalendarView {
             Text(item.weekday)
                 .font(.system(size: 13, weight: .regular))
                 .foregroundColor(.gray)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .frame(width: size.width, alignment: .center)
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(isSelected ? Color.black.opacity(0.7) : Color.gray.opacity(0.35), lineWidth: isSelected ? 2.5 : 1)
@@ -89,6 +93,7 @@ private extension CalendarView {
                 }
             }
         }
+        .frame(width: size.width)
     }
 }
 
