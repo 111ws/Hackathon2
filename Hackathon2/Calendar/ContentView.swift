@@ -10,6 +10,9 @@ import AVFoundation
 import CallKit
 import PushKit
 
+// 导入自定义视图
+
+
 // 通话状态枚举
 enum CallState {
     case idle
@@ -36,7 +39,7 @@ struct ContentView: View {
                 appBackground
                 TabView(selection: $selectedTab) {
                     // Dashboard
-                    IdleView(callManager: callManager)
+                    HomeAndMentalView()
                         .tabItem { Label("Dashboard", systemImage: "house.fill") }
                         .tag(Tab.dashboard)
 
@@ -61,10 +64,11 @@ struct ContentView: View {
                     CustomTabBar(selected: $selectedTab)
                 }
             }
-            .navigationBarBackButtonHidden(true)
             .ignoresSafeArea(edges: .bottom)
             .onAppear { }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
     }
     
     // MARK: - Subviews

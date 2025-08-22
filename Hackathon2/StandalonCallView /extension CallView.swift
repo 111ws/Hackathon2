@@ -85,8 +85,13 @@ extension StandaloneCallView {
     // private let minSpeechDuration: TimeInterval = 0.5
     // private let maxSpeechDuration: TimeInterval = 10.0
     
+    
     func startContinuousSpeechRecognition() {
-        guard !isMuted else { return }
+        guard !isMuted,
+              speechRecognizer?.isAvailable == true,
+              SFSpeechRecognizer.authorizationStatus() == .authorized else {
+            return
+        }
         
         stopSpeechRecognition()
         
@@ -99,313 +104,186 @@ extension StandaloneCallView {
             return
         }
         
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        guard let recognitionRequest = recognitionRequest else { return }
+        
+        recognitionRequest.shouldReportPartialResults = true
+        recognitionRequest.requiresOnDeviceRecognition = false
+        
+        // 在startContinuousSpeechRecognition方法中，替换recognitionTask的处理逻辑
+        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest) { result, error in
+        DispatchQueue.main.async {
+        if let result = result {
+        let transcription = result.bestTranscription.formattedString
+        
+        // 更新当前语音文本显示
+        self.currentSpeechText = transcription
+        self.isSpeaking = !result.isFinal
+        
+        // 如果文本发生变化且不为空，立即发送
+        if !transcription.isEmpty && transcription != self.previousTranscription {
+        self.previousTranscription = transcription
+        
+        // 取消之前的定时器
+        self.speechTimer?.invalidate()
+        
+        // 设置新的定时器，延迟发送以确保语音识别完成
+        self.speechTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _ in
+        if !transcription.isEmpty {
+        self.sendSpeechToBackend(message: transcription)
+        self.speechHistory.append(transcription)
+        self.currentSpeechText = ""
+        self.previousTranscription = ""
+        }
+        }
+        }
+        
+        // 如果是最终结果，立即发送
+        if result.isFinal {
+        self.speechTimer?.invalidate()
+        if !transcription.isEmpty {
+        self.sendSpeechToBackend(message: transcription)
+        self.speechHistory.append(transcription)
+        self.currentSpeechText = ""
+        self.previousTranscription = ""
+        }
+        }
+        }
+        
+        if error != nil {
+        self.addDebugMessage("❌ Speech recognition error: \(error?.localizedDescription ?? "Unknown error")")
+        self.restartSpeechRecognition()
+        }
+        }
+        }
+        
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
         
-        // 重置VAD状态
-        resetVADState()
-        
-        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { [weak self] buffer, time in
-            guard let self = self else { return }
-            
-            // 计算音频音量
-            let volume = self.calculateVolume(from: buffer)
-            
-            // 语音活动检测
-            self.processVoiceActivity(buffer: buffer, volume: volume)
+        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { buffer, _ in
+            self.recognitionRequest?.append(buffer)
         }
         
         audioEngine.prepare()
         do {
             try audioEngine.start()
-            addDebugMessage("🎤 Voice Activity Detection started")
+            self.addDebugMessage("Speech recognition started")
         } catch {
-            addDebugMessage("❌ Audio recording startup failed: \(error.localizedDescription)")
+            self.addDebugMessage("Speech recognition startup failed: \(error.localizedDescription)")
         }
     }
     
-    // MARK: - 语音活动检测核心逻辑
-    
-    private func processVoiceActivity(buffer: AVAudioPCMBuffer, volume: Float) {
-        let currentTime = Date()
-        let isSpeech = volume > silenceThreshold
+    func speakText(_ text: String) {
+        // 停止当前语音识别，避免冲突
+        stopSpeechRecognition()
         
-        if isSpeech {
-            // 检测到语音
-            handleSpeechDetected(buffer: buffer, currentTime: currentTime)
-        } else {
-            // 检测到静音
-            handleSilenceDetected(currentTime: currentTime)
-        }
+        // 停止当前正在播放的语音
+        speechSynthesizer.stopSpeaking(at: .immediate)
         
-        // 检查最大录音时长
-        checkMaxRecordingDuration(currentTime: currentTime)
-    }
-    
-    private func handleSpeechDetected(buffer: AVAudioPCMBuffer, currentTime: Date) {
-        lastSpeechTime = currentTime
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US") // 或者使用"zh-CN"中文
+        utterance.rate = 0.5 // 语速，范围0.0-1.0
+        utterance.pitchMultiplier = 1.0 // 音调
+        utterance.volume = 1.0 // 音量
         
-        // 取消静音计时器
-        silenceTimer?.invalidate()
-        silenceTimer = nil
+        // 设置播放状态
+        isPlayingResponse = true
+        addDebugMessage("🔊 Started speaking AI response")
         
-        if !isRecording {
-            // 开始录音
-            startRecording(currentTime: currentTime)
-        }
+        speechSynthesizer.speak(utterance)
         
-        // 添加音频数据到缓冲区
-        let audioData = audioBufferToData(buffer)
-        speechBuffer.append(audioData)
-        
-        DispatchQueue.main.async {
-            self.addDebugMessage("🗣️ Speech detected, buffer size: \(self.speechBuffer.count) bytes")
+        // 监听语音合成完成
+        DispatchQueue.main.asyncAfter(deadline: .now() + Double(text.count) * 0.1) {
+            self.isPlayingResponse = false
+            self.addDebugMessage("� Finished speaking AI response")
+            self.restartSpeechRecognition()
         }
     }
     
-    private func handleSilenceDetected(currentTime: Date) {
-        if isRecording && silenceTimer == nil {
-            // 开始静音计时
-            silenceTimer = Timer.scheduledTimer(withTimeInterval: silenceDuration, repeats: false) { [weak self] _ in
-                self?.finishRecording(reason: "Silence detected")
-            }
-            
-            DispatchQueue.main.async {
-                self.addDebugMessage("🤫 Silence detected, starting timer...")
-            }
-        }
-    }
-    
-    private func startRecording(currentTime: Date) {
-        isRecording = true
-        speechStartTime = currentTime
-        speechBuffer.removeAll()
+    func sendSpeechToBackend(message: String) {
+        guard !message.isEmpty else { return }
         
-        DispatchQueue.main.async {
-            self.addDebugMessage("🎙️ Recording started")
-        }
-    }
-    
-    private func finishRecording(reason: String) {
-        guard isRecording else { return }
+        addDebugMessage("📤 Sending speech to backend: \"\(message.prefix(20))...\"")
         
-        let recordingDuration = speechStartTime.map { Date().timeIntervalSince($0) } ?? 0
+        // 更改为新的API接口
+        let url = URL(string: "https://emohunter-api-6106408799.us-central1.run.app/api/v1/text_conversation")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.timeoutInterval = 30.0
         
-        // 检查最小录音时长
-        if recordingDuration < minSpeechDuration {
-            DispatchQueue.main.async {
-                self.addDebugMessage("⚠️ Recording too short (\(String(format: "%.1f", recordingDuration))s), discarded")
-            }
-            resetVADState()
+        let requestBody = [
+            "message": message,
+            "user_id": userId
+        ]
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: requestBody)
+            addDebugMessage("✅ Request body serialized successfully")
+        } catch {
+            addDebugMessage("❌ JSON serialization failed: \(error.localizedDescription)")
             return
         }
         
-        // 发送音频数据
-        let finalBuffer = speechBuffer
-        
-        DispatchQueue.main.async {
-            self.addDebugMessage("✅ Recording finished (\(reason)): \(String(format: "%.1f", recordingDuration))s, \(finalBuffer.count) bytes")
-            self.sendAudioBufferToBackend(finalBuffer)
-        }
-        
-        resetVADState()
-    }
-    
-    private func checkMaxRecordingDuration(currentTime: Date) {
-        guard isRecording,
-              let startTime = speechStartTime,
-              currentTime.timeIntervalSince(startTime) > maxSpeechDuration else { return }
-        
-        finishRecording(reason: "Max duration reached")
-    }
-    
-    private func resetVADState() {
-        isRecording = false
-        speechBuffer.removeAll()
-        silenceTimer?.invalidate()
-        silenceTimer = nil
-        lastSpeechTime = nil
-        speechStartTime = nil
-    }
-    
-    // MARK: - 音量计算
-    
-    private func calculateVolume(from buffer: AVAudioPCMBuffer) -> Float {
-        guard let channelData = buffer.floatChannelData?[0] else { return -100.0 }
-        
-        let frameLength = Int(buffer.frameLength)
-        var sum: Float = 0.0
-        
-        // 计算RMS (Root Mean Square)
-        for i in 0..<frameLength {
-            let sample = channelData[i]
-            sum += sample * sample
-        }
-        
-        let rms = sqrt(sum / Float(frameLength))
-        
-        // 转换为分贝
-        let db = 20.0 * log10(max(rms, 1e-10))
-        return db
-    }
-    
-    // MARK: - 停止录音
-    
-    // 保留第256行的stopSpeechRecognition函数，删除第495行的重复定义
-    func stopSpeechRecognition() {
-        if audioEngine.isRunning {
-            audioEngine.stop()
-            audioEngine.inputNode.removeTap(onBus: 0)
-        }
-        
-        // 如果正在录音，完成当前录音
-        if isRecording {
-            finishRecording(reason: "Manual stop")
-        }
-        
-        resetVADState()
-        addDebugMessage("🛑 Voice Activity Detection stopped")
-    }
-
-    
-    
-    func createWAVData(from pcmData: Data, sampleRate: Double) -> Data {
-        let wavHeaderSize = 44
-        let totalAudioLen = pcmData.count
-        let totalDataLen = totalAudioLen + wavHeaderSize - 8
-        let byteRate = Int(sampleRate) * 2 * 1 // 假设16bit, mono
-        
-        var wavHeader = Data()
-        
-        // RIFF header
-        wavHeader.append("RIFF".data(using: .ascii)!)
-        wavHeader.append(contentsOf: withUnsafeBytes(of: totalDataLen.littleEndian) { Data($0) })
-        wavHeader.append("WAVE".data(using: .ascii)!)
-        
-        // fmt chunk
-        wavHeader.append("fmt ".data(using: .ascii)!)
-        wavHeader.append(contentsOf: withUnsafeBytes(of: 16.littleEndian) { Data($0) }) // Subchunk1Size
-        wavHeader.append(contentsOf: withUnsafeBytes(of: 1.littleEndian) { Data($0) }) // AudioFormat (PCM)
-        wavHeader.append(contentsOf: withUnsafeBytes(of: 1.littleEndian) { Data($0) }) // NumChannels (Mono)
-        wavHeader.append(contentsOf: withUnsafeBytes(of: Int32(sampleRate).littleEndian) { Data($0) })
-        wavHeader.append(contentsOf: withUnsafeBytes(of: Int32(byteRate).littleEndian) { Data($0) })
-        wavHeader.append(contentsOf: withUnsafeBytes(of: 2.littleEndian) { Data($0) }) // BlockAlign
-        wavHeader.append(contentsOf: withUnsafeBytes(of: 16.littleEndian) { Data($0) }) // BitsPerSample
-        
-        // data chunk
-        wavHeader.append("data".data(using: .ascii)!)
-        wavHeader.append(contentsOf: withUnsafeBytes(of: totalAudioLen.littleEndian) { Data($0) })
-        
-        return wavHeader + pcmData
-    }
-    func sendAudioBufferToBackend(_ audioData: Data) {
-        guard !audioData.isEmpty else { return }
+        let startTime = Date()
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            let responseTime = Date().timeIntervalSince(startTime)
             
-            addDebugMessage("📤 Sending audio data to backend（发送音频到后台）: \(audioData.count) bytes")
-            
-            let url = URL(string: "https://emohunter-api-6106408799.us-central1.run.app/api/v1/voice_conversation")!
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.timeoutInterval = 30.0
-            
-            // 创建multipart/form-data格式
-            let boundary = "Boundary-\(UUID().uuidString)"
-            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-            
-            // 构建multipart body
-            var body = Data()
-            
-            // 添加音频文件
-            body.append("--\(boundary)\r\n".data(using: .utf8)!)
-            body.append("Content-Disposition: form-data; name=\"audio\"; filename=\"audio.wav\"\r\n".data(using: .utf8)!)
-            body.append("Content-Type: audio/wav\r\n\r\n".data(using: .utf8)!)
-            body.append(audioData)
-            body.append("\r\n".data(using: .utf8)!)
-            
-            // 添加user_id字段
-            body.append("--\(boundary)\r\n".data(using: .utf8)!)
-            body.append("Content-Disposition: form-data; name=\"user_id\"\r\n\r\n".data(using: .utf8)!)
-            body.append(userId.data(using: .utf8)!)
-            body.append("\r\n".data(using: .utf8)!)
-            
-            // 结束boundary
-            body.append("--\(boundary)--\r\n".data(using: .utf8)!)
-            
-            request.httpBody = body
-            addDebugMessage("✅ Audio data encoded as multipart/form-data")
-            
-            // 网络请求执行代码保持不变...
-            let startTime = Date()
-            // 在 sendAudioBufferToBackend 函数中，替换现有的响应处理代码
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                let responseTime = Date().timeIntervalSince(startTime)
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.addDebugMessage("❌ API request failed (\(String(format: "%.2f", responseTime))s): \(error.localizedDescription)")
+                    return
+                }
                 
-                DispatchQueue.main.async {
-                    if let error = error {
-                        self.addDebugMessage("❌ API request failed (\(String(format: "%.2f", responseTime))s): \(error.localizedDescription)")
-                        return
-                    }
+                if let httpResponse = response as? HTTPURLResponse {
+                    self.addDebugMessage("✅ API response status code: \(httpResponse.statusCode)")
+                }
+                
+                if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                    self.addDebugMessage("📥 Received response data: \(responseString.prefix(200))...")
                     
-                    if let httpResponse = response as? HTTPURLResponse {
-                        self.addDebugMessage("✅ API response status code: \(httpResponse.statusCode) (duration: \(String(format: "%.2f", responseTime)) seconds)")
-                        
-                        // 添加响应头信息调试
-                        if let contentType = httpResponse.value(forHTTPHeaderField: "Content-Type") {
-                            self.addDebugMessage("📋 Response Content-Type: \(contentType)")
-                        }
-                        if let contentLength = httpResponse.value(forHTTPHeaderField: "Content-Length") {
-                            self.addDebugMessage("📏 Response Content-Length: \(contentLength)")
-                        }
-                    }
-                    
-                    // 改进数据处理逻辑
-                    if let data = data {
-                        self.addDebugMessage("📥 Received \(data.count) bytes of response data")
-                        
-                        if data.count == 0 {
-                            self.addDebugMessage("⚠️ Response data is empty")
-                            return
-                        }
-                        
-                        if let responseString = String(data: data, encoding: .utf8) {
-                            self.addDebugMessage("📥 Response content: \(responseString.prefix(500))...")
-                            
-                            do {
-                                if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
-                                    self.addDebugMessage("✅ Successfully parsed JSON response")
-                                    
-                                    if let audioUrl = json["audio_url"] as? String {
-                                        self.addDebugMessage("🎵 Received MP3 audio URL: \(audioUrl)")
-                                        self.playMP3AudioFromURL(audioUrl)
-                                    } else if let audioData = json["audio_data"] as? String {
-                                        self.addDebugMessage("🎵 Received base64 audio data (\(audioData.count) characters)")
-                                        self.playMP3AudioFromBase64(audioData)
-                                    } else {
-                                        self.addDebugMessage("❌ No audio_url or audio_data found in response")
-                                        self.addDebugMessage("📋 Available keys: \(Array(json.keys))")
-                                    }
-                                } else {
-                                    self.addDebugMessage("❌ Response is not valid JSON")
-                                }
-                            } catch {
-                                self.addDebugMessage("❌ JSON parsing failed: \(error.localizedDescription)")
-                                // 尝试直接播放音频数据
-                                self.addDebugMessage("🔄 Attempting to play response as direct audio data")
-                                self.playMP3AudioData(data)
+                    do {
+                        if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                            // 新API直接返回音频URL，不再使用AVSpeechSynthesizer
+                            if let audioUrl = json["audio_url"] as? String {
+                                self.addDebugMessage("🎵 Received MP3 audio URL: \(audioUrl)")
+                                self.playMP3AudioFromURL(audioUrl)
+                            } else if let audioData = json["audio_data"] as? String {
+                                // 如果返回base64编码的音频数据
+                                self.addDebugMessage("🎵 Received base64 audio data")
+                                self.playMP3AudioFromBase64(audioData)
+                            } else {
+                                self.addDebugMessage("❌ No audio data found in response")
                             }
-                        } else {
-                            self.addDebugMessage("❌ Cannot convert response data to string, trying as binary audio")
-                            // 尝试直接播放二进制音频数据
-                            self.playMP3AudioData(data)
                         }
-                    } else {
-                        self.addDebugMessage("❌ No response data received (data is nil)")
+                    } catch {
+                        self.addDebugMessage("❌ Response parsing failed: \(error.localizedDescription)")
                     }
                 }
             }
-            .resume()
+        }.resume()
     }
+   
+    func stopSpeechRecognition() {
+            speechTimer?.invalidate()
+            audioEngine.stop()
+            audioEngine.inputNode.removeTap(onBus: 0)
+            recognitionRequest?.endAudio()
+            recognitionTask?.cancel()
     
+            recognitionRequest = nil
+            recognitionTask = nil
+            currentSpeechText = ""
+            isSpeaking = false
+        }
+    
+        func restartSpeechRecognition() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                if self.isCallActive && !self.isMuted {
+                    self.startContinuousSpeechRecognition()
+                }
+            }
+        }
     func playMP3AudioFromURL(_ urlString: String) {
         guard let url = URL(string: urlString) else {
             addDebugMessage("❌ Invalid MP3 audio URL")
@@ -496,13 +374,7 @@ extension StandaloneCallView {
     
     
     
-    func restartSpeechRecognition() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            if self.isCallActive && !self.isMuted {
-                self.startContinuousSpeechRecognition()
-            }
-        }
-    }
+   
     
     func stopAudioPlayback() {
         audioPlayer?.stop()

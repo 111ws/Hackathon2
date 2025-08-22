@@ -159,100 +159,115 @@ struct AdvancedGradientRippleAnimation: View {
     }
     
     var body: some View {
-        ZStack {
-            Color.clear
+        GeometryReader { proxy in
+            let size = min(proxy.size.width, proxy.size.height)
+            let center = CGPoint(x: size / 2, y: size / 2)
+            let base: CGFloat = 60.0
+            let scale = maxSize / base
             
-            // 多层光环效果
-            ForEach(0..<count, id: \.self) { index in
-                Circle()
-                    .fill(
-                        RadialGradient(
-                            gradient: Gradient(colors: [
-                                centerColor.opacity(0.6),
-                                centerColor.opacity(0.3),
-                                edgeColor
-                            ]),
-                            center: .center,
-                            startRadius: 15,
-                            endRadius: maxSize / 2
-                        )
-                    )
-                    .frame(width: 60, height: 60)
-                    .scaleEffect(animate ? (maxSize / 60) : 1)
-                    .opacity(animate ? 0 : 0.8)
-                    .animation(
-                        Animation.easeOut(duration: duration)
-                            .delay(Double(index) * delay)
-                            .repeatForever(autoreverses: false),
-                        value: animate
-                    )
-                    .overlay(
-                        Circle()
-                            .stroke(
-                                centerColor.opacity(0.4),
-                                lineWidth: 1
-                            )
-                            .scaleEffect(animate ? (maxSize / 60) : 1)
-                            .opacity(animate ? 0 : 0.6)
-                            .animation(
-                                Animation.easeOut(duration: duration)
-                                    .delay(Double(index) * delay + 0.2)
-                                    .repeatForever(autoreverses: false),
-                                value: animate
-                            )
-                    )
-            }
-            
-            // 中心发光圆点（带发光效果）
             ZStack {
-                // 外层光晕
-                Circle()
-                    .fill(
-                        RadialGradient(
-                            gradient: Gradient(colors: [
-                                centerColor.opacity(0.8),
-                                centerColor.opacity(0.4),
-                                Color.clear
-                            ]),
-                            center: .center,
-                            startRadius: 0,
-                            endRadius: 35
-                        )
-                    )
-                    .frame(width: 70, height: 70)
-                    .scaleEffect(glow ? 1.2 : 1)
-                    .opacity(glow ? 0.6 : 0.8)
-                    .animation(
-                        Animation.easeInOut(duration: 2.0)
-                            .repeatForever(autoreverses: true),
-                        value: glow
-                    )
+                Color.clear
                 
-                // 主圆点
-                Circle()
-                    .fill(
-                        RadialGradient(
-                            gradient: Gradient(colors: [
-                                centerColor.opacity(1.0),
-                                centerColor.opacity(0.7),
-                                centerColor.opacity(0.3)
-                            ]),
-                            center: .center,
-                            startRadius: 0,
-                            endRadius: 25
+                // 多层光环效果
+                ForEach(0..<count, id: \.self) { index in
+                    Circle()
+                        .fill(
+                            RadialGradient(
+                                gradient: Gradient(colors: [
+                                    centerColor.opacity(0.6),
+                                    centerColor.opacity(0.3),
+                                    edgeColor
+                                ]),
+                                center: .center,
+                                startRadius: 15,
+                                endRadius: maxSize / 2
+                            )
                         )
-                    )
-                    .frame(width: 50, height: 50)
-                    .shadow(color: centerColor.opacity(0.7), radius: 20, x: 0, y: 0)
+                        .frame(width: base, height: base)
+                        .position(center)
+                        .scaleEffect(animate ? scale : 1, anchor: .center)
+                        .opacity(animate ? 0 : 0.8)
+                        .animation(
+                            Animation.easeOut(duration: duration)
+                                .delay(Double(index) * delay)
+                                .repeatForever(autoreverses: false),
+                            value: animate
+                        )
+                        .overlay(
+                            Circle()
+                                .stroke(
+                                    centerColor.opacity(0.4),
+                                    lineWidth: 1
+                                )
+                                .frame(width: base, height: base)
+                                .position(center)
+                                .scaleEffect(animate ? scale : 1, anchor: .center)
+                                .opacity(animate ? 0 : 0.6)
+                                .animation(
+                                    Animation.easeOut(duration: duration)
+                                        .delay(Double(index) * delay + 0.2)
+                                        .repeatForever(autoreverses: false),
+                                    value: animate
+                                )
+                        )
+                }
                 
-                // 内层高光
-                Circle()
-                    .fill(Color.white.opacity(0.4))
-                    .frame(width: 20, height: 20)
-                    .blur(radius: 3)
-                    .offset(x: -5, y: -5)
+                // 中心发光圆点（带发光效果）
+                ZStack {
+                    // 外层光晕
+                    Circle()
+                        .fill(
+                            RadialGradient(
+                                gradient: Gradient(colors: [
+                                    centerColor.opacity(0.8),
+                                    centerColor.opacity(0.4),
+                                    Color.clear
+                                ]),
+                                center: .center,
+                                startRadius: 0,
+                                endRadius: 35
+                            )
+                        )
+                        .scaleEffect(glow ? 1.2 : 1)
+                        .opacity(glow ? 0.6 : 0.8)
+                        .animation(
+                            Animation.easeInOut(duration: 2.0)
+                                .repeatForever(autoreverses: true),
+                            value: glow
+                        )
+                    
+                    // 主圆点
+                    Circle()
+                        .fill(
+                            RadialGradient(
+                                gradient: Gradient(colors: [
+                                    centerColor.opacity(1.0),
+                                    centerColor.opacity(0.7),
+                                    centerColor.opacity(0.3)
+                                ]),
+                                center: .center,
+                                startRadius: 0,
+                                endRadius: 25
+                            )
+                        )
+                        .shadow(color: centerColor.opacity(0.7), radius: 20, x: 0, y: 0)
+                    
+                    // 内层高光
+                    Circle()
+                        .fill(Color.white.opacity(0.4))
+                        .frame(width: 20, height: 20)
+                        .blur(radius: 3)
+                        .offset(x: -5, y: -5)
+                }
+                .frame(width: size * 0.5, height: size * 0.5)
+                .position(center)
             }
+            .frame(width: proxy.size.width, height: proxy.size.height, alignment: .center)
+            .compositingGroup()
+            .drawingGroup()
+            .allowsHitTesting(false)
         }
+        .aspectRatio(1, contentMode: .fit)
         .onAppear {
             animate = true
             glow = true

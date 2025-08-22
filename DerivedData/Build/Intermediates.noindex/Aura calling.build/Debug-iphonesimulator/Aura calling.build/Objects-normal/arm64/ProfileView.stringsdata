@@ -1,0 +1,304 @@
+{
+  "source": "/Users/macbookpro/Desktop/未命名文件夹/Hackathon2/Hackathon2/Hackathon2/Calendar/ProfileView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 21,
+          "startingLine": 24
+        }
+      },
+      {
+        "comment": "",
+        "key": "Pro",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 37
+        }
+      },
+      {
+        "comment": "",
+        "key": "Logged in as %@",
+        "location": {
+          "startingColumn": 9,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "Version %@",
+        "location": {
+          "startingColumn": 9,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "Sign Out",
+        "location": {
+          "startingColumn": 9,
+          "startingLine": 95
+        }
+      },
+      {
+        "comment": "",
+        "key": "Manage Subscription",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 155
+        }
+      },
+      {
+        "comment": "",
+        "key": "Manage Subscription",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 133
+        }
+      },
+      {
+        "comment": "",
+        "key": "Aura Pledge",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 144
+        }
+      },
+      {
+        "comment": "",
+        "key": "Aura Premium",
+        "location": {
+          "startingColumn": 11,
+          "startingLine": 135
+        }
+      },
+      {
+        "comment": "",
+        "key": "Annual",
+        "location": {
+          "startingColumn": 11,
+          "startingLine": 137
+        }
+      },
+      {
+        "comment": "",
+        "key": "2024-2-15 – 2025-2-14",
+        "location": {
+          "startingColumn": 11,
+          "startingLine": 140
+        }
+      },
+      {
+        "comment": "",
+        "key": "Export Data",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 150
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete Account",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 151
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 192
+        }
+      },
+      {
+        "comment": "",
+        "key": "Proactive Checkins",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 177
+        }
+      },
+      {
+        "comment": "",
+        "key": "Weekly Insights",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 183
+        }
+      },
+      {
+        "comment": "",
+        "key": "HealthKit Permission",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 184
+        }
+      },
+      {
+        "comment": "",
+        "key": "Camera Permission",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 185
+        }
+      },
+      {
+        "comment": "",
+        "key": "Quiet Hours",
+        "location": {
+          "startingColumn": 11,
+          "startingLine": 179
+        }
+      },
+      {
+        "comment": "",
+        "key": "12PM–10AM",
+        "location": {
+          "startingColumn": 11,
+          "startingLine": 181
+        }
+      },
+      {
+        "comment": "",
+        "key": "Privacy Policy",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 188
+        }
+      },
+      {
+        "comment": "",
+        "key": "Privacy Policy (placeholder)",
+        "location": {
+          "startingColumn": 45,
+          "startingLine": 188
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 213
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reduce Motion",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 208
+        }
+      },
+      {
+        "comment": "",
+        "key": "High Contrast",
+        "location": {
+          "startingColumn": 12,
+          "startingLine": 209
+        }
+      },
+      {
+        "comment": "",
+        "key": "Text Size",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 205
+        }
+      },
+      {
+        "comment": "",
+        "key": "–",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 205
+        }
+      },
+      {
+        "comment": "",
+        "key": "Aura’s Voice",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 206
+        }
+      },
+      {
+        "comment": "",
+        "key": "Speech Rate",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 207
+        }
+      },
+      {
+        "comment": "",
+        "key": "1.0x",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 207
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 226
+        }
+      },
+      {
+        "comment": "",
+        "key": "Terms of Service",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 221
+        }
+      },
+      {
+        "comment": "",
+        "key": "Medical Disclaimer",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 222
+        }
+      },
+      {
+        "comment": "",
+        "key": "Acknowledgements",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 223
+        }
+      },
+      {
+        "comment": "",
+        "key": "Terms of Service (placeholder)",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 221
+        }
+      },
+      {
+        "comment": "",
+        "key": "Medical Disclaimer (placeholder)",
+        "location": {
+          "startingColumn": 48,
+          "startingLine": 222
+        }
+      },
+      {
+        "comment": "",
+        "key": "Acknowledgements (placeholder)",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 223
+        }
+      }
+    ]
+  },
+  "version": 1
+}
