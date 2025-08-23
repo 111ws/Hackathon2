@@ -14,7 +14,7 @@ struct remoteView: View {
             LinearGradient(
                 gradient: Gradient(colors: [
                     Color(red: 1.0, green: 0.72, blue: 0.50),    // FFB780
-                    Color(red: 0.87, green: 0.71, blue: 0.62),   // D6B69D
+                    Color(red: 0.84, green: 0.71, blue: 0.62),   // D6B69D
                     Color(red: 1.0, green: 0.76, blue: 0.58)     // FFC395
                 ]),
                 startPoint: .topLeading,
@@ -25,14 +25,14 @@ struct remoteView: View {
             // 中间的涟漪波纹动画
             VStack {
                 Spacer()
-                    .frame(height: UIScreen.main.bounds.height * 0.15)
+                    .frame(height: UIScreen.main.bounds.height * 0.18)
                 AdvancedGradientRippleAnimation(
                     color: .white,
                     maxSize: 180,
                     centerColor: .white,
                     edgeColor: Color.white.opacity(0.2)
                 )
-                .frame(width: 4000, height: 400)
+                .frame(width: 300, height: 300)
                 
                 Spacer()
             }

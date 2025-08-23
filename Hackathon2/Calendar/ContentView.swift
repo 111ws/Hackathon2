@@ -10,10 +10,6 @@ import AVFoundation
 import CallKit
 import PushKit
 
-// 导入自定义视图
-
-
-// 通话状态枚举
 enum CallState {
     case idle
     case ringing

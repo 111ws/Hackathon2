@@ -196,6 +196,7 @@ class CallManager: ObservableObject {
     // 修改 startCall 方法，移除接听延迟
     func startCall() {
         contactName = "Aura"
+        
         // 直接报告来电，不设置延迟
         callKitManager.reportIncomingCall(from: contactName)
     }

@@ -89,7 +89,7 @@ struct PrivacyToggleView: View {
             }
             .padding(.horizontal)
             .padding(.bottom, 32)
-            .navigationDestination(isPresented: $navigateToContentView) { ContentView() }
+            .navigationDestination(isPresented: $navigateToContentView) { /*ContentView()*/ HomeCalendarQuickView() }
             .navigationBarBackButtonHidden(true)
         }
         .background(

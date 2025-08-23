@@ -195,7 +195,7 @@ struct StandaloneCallContent: View {
                         )
                         .shadow(color: .black.opacity(0.5), radius: 10, x: 0, y: 5)
                         .padding(.horizontal, -190)
-                        .padding(.top, -330)
+                        .padding(.top, -380)
                 }
                 .zIndex(1000)
             }
