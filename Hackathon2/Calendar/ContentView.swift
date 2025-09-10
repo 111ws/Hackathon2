@@ -32,99 +32,83 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                appBackground
-                TabView(selection: $selectedTab) {
-                    // Dashboard
-                    HomeAndMentalView()
-                        .tabItem { Label("Dashboard", systemImage: "house.fill") }
-                        .tag(Tab.dashboard)
-
-                    // Insights (Health)
-                    HealthView()
-                        .tabItem { Label("Insights", systemImage: "heart.fill") }
-                        .tag(Tab.insights)
-                    StandaloneCallViewWrapper()
-                       .tag(Tab.callview)
-                    // Calendar
-                    CalendarView()
-                        .tabItem { Label("Calendar", systemImage: "calendar") }
-                        .tag(Tab.calendar)
-
-                    // Profile
-                    ProfileView()
-                        .tabItem { Label("Profile", systemImage: "person.crop.circle") }
-                        .tag(Tab.profile)
-                }
-                .toolbar(.hidden, for: .tabBar)
-                .overlay(alignment: .bottom) {
-                    CustomTabBar(selected: $selectedTab)
-                }
-            }
-            .ignoresSafeArea(edges: .bottom)
-            .onAppear { }
+                       // 页面内容
+                       Group {
+                           switch selectedTab {
+                           case .dashboard:
+                               HomeAndMentalView()
+                           case .insights:
+                               HealthView()
+                           case .callview:
+                               StandaloneCallViewWrapper()
+                           case .calendar:
+                               CalendarView()
+                           case .profile:
+                               ProfileView()
+                           }
+                       }
+                       .transition(.opacity)
+                       .overlay(
+                                   CustomTabBar(selected: $selectedTab)
+                               )
+                   }
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
     }
     
-    // MARK: - Subviews
-    private var appBackground: some View {
-        ZStack {
-            LinearGradient(
-                gradient: Gradient(colors: [
-                    Color(red: 0.8, green: 0.75, blue: 0.65),
-                    Color(red: 0.9, green: 0.5, blue: 0.5)
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            
-            Rectangle()
-                .fill(.ultraThinMaterial)
-                .opacity(0.4)
-        }
-        .ignoresSafeArea()
-    }
+ 
+   
 }
 
 // MARK: - Custom Tab Bar (matches design)
 private struct CustomTabBar: View {
     @Binding var selected: ContentView.Tab
-    
-    private let barHeight: CGFloat = 0
+    private let barHeight: CGFloat = 8
     
     var body: some View {
+        VStack{
+            Spacer().frame(height: UIScreen.main.bounds.height * 0.88)
         ZStack(alignment: .bottom) {
             // Background bar
-            Rectangle()
-                .fill(Color(.sRGB, red: 0.25, green: 0.25, blue: 0.25, opacity: 1))
-                .frame(height: barHeight)
-                .ignoresSafeArea(edges: .bottom)
-            
+
+            Image("tabbackground")
+                   .resizable()
+                  
+                   .aspectRatio(contentMode: .fill)
+                   .frame(width: UIScreen.main.bounds.width + 70, height: barHeight)
+                   .shadow(color: Color.orange.opacity(0.35), radius: 10, x: 120, y: 35)
+                   .offset(y: -19)
+                   .ignoresSafeArea(.all, edges: [.horizontal, .bottom])
             // Five equidistant items (center blue pill is a non-navigation button)
             HStack(alignment: .bottom, spacing: 0) {
-               // tabButton(.dashboard, title: "Dashboard", systemImage: "house.fill")
-               // tabButton(.insights, title: "Insights", systemImage: "heart.fill")
+                tabButton(.dashboard, title: " ", selectedImage: "house", unselectedImage: "house")
+                tabButton(.insights, title: " ", selectedImage: "insightfill", unselectedImage: "insight")
                 centerPillButton()
-               // tabButton(.calendar, title: "Calendar", systemImage: "calendar")
-                //tabButton(.profile, title: "Profile", systemImage: "person.crop.circle")
+                tabButton(.calendar, title: " ", selectedImage: "calendarfill", unselectedImage: "calendar")
+                tabButton(.profile, title: "", selectedImage: "profilefill", unselectedImage: "profile")
             }
-            .padding(.horizontal, 12)
-            .padding(.bottom, 27)
-            .frame(height: barHeight)
+          
+            .padding(.bottom, 50)
+            .frame(width: UIScreen.main.bounds.width + 10, height: barHeight)
         }
+        .ignoresSafeArea(.all, edges: [.horizontal, .bottom])
+    }
         
     }
     
-   func tabButton(_ tab: ContentView.Tab, title: String, systemImage: String) -> some View {
+   func tabButton(_ tab: ContentView.Tab, title: String, systemImage: String? = nil, selectedImage: String? = nil, unselectedImage: String? = nil) -> some View {
         let isSelected = selected == tab
         return VStack(spacing: 2) {
             ZStack {
-                Circle()
-                    .fill(isSelected ? Color.white : Color.gray.opacity(0.35))
-                    .frame(width: 36, height: 36)
-                Image(systemName: systemImage)
-                    .foregroundColor(isSelected ? Color.black : Color.white.opacity(0.9))
+                if let selectedImg = selectedImage, let unselectedImg = unselectedImage {
+                    Image(isSelected ? selectedImg : unselectedImg)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 10, height: 10)
+                } else if let sysImage = systemImage {
+                    Image(systemName: sysImage)
+                        .foregroundColor(isSelected ? Color.black : Color.white.opacity(0.9))
+                }
             }
             Text(title)
                 .font(.caption2)
@@ -138,12 +122,12 @@ private struct CustomTabBar: View {
     // Center blue pill button (does not navigate)
     private func centerPillButton() -> some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 26)
-                .fill(Color(red: 0.35, green: 0.75, blue: 0.95))
-                .frame(width: 66, height: 76)
-                .offset(y: -50)
-                .shadow(color: Color.black.opacity(0.35), radius: 8, x: 0, y: 3)
-            // Optional icon can be added here if desired
+            Image("PillButton")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 80, height: 80)
+                .offset(y: -20)
+                .shadow(color: Color.orange.opacity(0.35), radius: 8, x: 0, y: 3)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
         .contentShape(Rectangle())

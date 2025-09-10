@@ -52,7 +52,7 @@ struct Welcome: View {
                         ZStack(){
                             RadialGradient(
                                 gradient: Gradient(colors: [
-                                    WarmTheme.cream.opacity(0.55),
+                                    WarmTheme.creamColor.opacity(0.55),
                                     Color.clear
                                 ]),
                                 center: .center,
@@ -62,8 +62,8 @@ struct Welcome: View {
                             .blur(radius: glow ? 16 : 10)
                             Text("Hi,Aura")
                                 .font(.title2.weight(.bold))
-                                .foregroundColor(WarmTheme.cream)
-                                .shadow(color: WarmTheme.cream.opacity(0.35), radius: glow ? 26 : 14, x: 0, y: 0)
+                                .foregroundColor(WarmTheme.creamColor)
+                                .shadow(color: WarmTheme.creamColor.opacity(0.35), radius: glow ? 26 : 14, x: 0, y: 0)
                                 .shadow(color: WarmTheme.accent.opacity(0.15), radius: glow ? 40 : 22, x: 0, y: 0)
                                 .animation(.easeInOut(duration: 1.6).repeatForever(autoreverses: true), value: glow)
                         }

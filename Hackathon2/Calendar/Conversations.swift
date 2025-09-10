@@ -380,11 +380,11 @@ extension ConversationStore {
 // MARK: - Color Theme
 struct WarmTheme {
     // 主要珊瑚色调
-    static let coral = Color(red: 1.0, green: 0.5, blue: 0.31) // #FF7F50
+    static let coral = Color(red: 1.0, green: 0.5, blue: 0.31) /// #FF7F50
     static let lightCoral = Color(red: 1.0, green: 0.63, blue: 0.48) // #FFA07A
     static let peach = Color(red: 0.9, green: 0.85, blue: 0.73) // #FFDAB9
-    static let cream = Color(red: 1.0, green: 0.97, blue: 0.93) // #FFF8ED
-
+    static let cream = LinearGradient(gradient: Gradient(stops: [.init(color: Color(red: 244/255, green: 183/255, blue: 136/255).opacity(0.4), location: 0.0),.init(color: Color.white, location: 0.7596)]),startPoint: .top,endPoint: .bottom)
+    static let creamColor = Color(red: 1.0, green: 0.72, blue: 0.50)
     static let primaryBackground = cream
     static let secondaryBackground = peach.opacity(0.3)
     static let cardBackground = Color.white.opacity(0.8)

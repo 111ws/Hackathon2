@@ -9,11 +9,11 @@ struct VoiceOption: Identifiable {
 
 struct VoiceSelectionView: View {
     @State private var options: [VoiceOption] = [
-        VoiceOption(name: "Juniper", description: "", isSelected: false),
-        VoiceOption(name: "Breeze", description: "", isSelected: true),
-        VoiceOption(name: "Cove", description: "", isSelected: false),
-        VoiceOption(name: "Sky", description: "", isSelected: false),
-        VoiceOption(name: "Ember", description: "", isSelected: false)
+        VoiceOption(name: "Jessica", description: "", isSelected: false),
+        VoiceOption(name: "Lily", description: "", isSelected: true),
+        VoiceOption(name: "Eric", description: "", isSelected: false),
+        VoiceOption(name: "Will", description: "", isSelected: false),
+        VoiceOption(name: "Clone a voice", description: "", isSelected: false)
     ]
     @State private var selectedIndex: Int = 1
     @State private var navigateToPrivacy = false
@@ -109,8 +109,7 @@ struct VoiceSelectionView: View {
             )
             .alert("Microphone Access", isPresented: $showMicrophoneAlert) {
                 Button("Don't Allow") {
-                    // 用户拒绝权限，可以选择是否继续或停留在当前页面
-                    // 这里选择继续到下一页
+
                     navigateToPrivacy = true
                 }
                 Button("Allow") {

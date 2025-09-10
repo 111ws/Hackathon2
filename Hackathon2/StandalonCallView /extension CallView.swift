@@ -348,13 +348,6 @@ extension StandaloneCallView {
         }
     }
     
-    // 注释掉或删除原来的speakText方法，因为不再使用AVSpeechSynthesizer
-    /*
-    func speakText(_ text: String) {
-        // 原来的AVSpeechSynthesizer代码
-    }
-    */
-    
     // 简化requestTTSAudio方法
     func requestTTSAudio(text: String) {
         addDebugMessage(" Text response received, but using MP3 audio instead: \(text)")
